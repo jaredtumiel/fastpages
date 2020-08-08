@@ -1,1 +1,1 @@
-Sitemap: https://jaredtumiel.github.io/fastpages/sitemap.xml
+Sitemap: https://jaredtumiel.github.io/blog/sitemap.xml
