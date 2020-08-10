@@ -174,7 +174,7 @@ $$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{\frac{q\left(
 
 Something you may notice about this is that we now have our KL divergence in terms of only our **R-density**, $q(T)$, and our **G-density**, $P(T,S)$, plus a **‘surprisal’ term** $\ln P(S)$ which - as we discussed above - just tells us how unexpected some sense data is. This looks like progress!
 
-We can pull the **lnP(S)** out from under the integral because we have the requirement that:
+We can pull the $\ln P(S)$ out from under the integral because we have the requirement that:
 
 $$\int_{}^{}{\text{dT} q \left( T \right) = 1}$$
 
@@ -212,7 +212,8 @@ $$F\  \geq \  - \ln{P(S)}$$
 
 More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them!
 
-So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior, $P(E\|S)$!
+So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior
+$$P(T|S)$$
 
 ## Another form of the free energy:
 
