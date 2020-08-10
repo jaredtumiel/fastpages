@@ -110,15 +110,20 @@ Okay, so that integral is intractable, which is formal mathematical language for
 
 ## Approximating your posterior
 
-We want to find the **posterior probability** (the probability we get after applying a Bayesian update) that: $$P(T=37|S)$$
+We want to find the **posterior probability** (the probability we get after applying a Bayesian update) that:
+
+$$P(T=37|S)$$
 
 It would really help us control our body temperature if we understood the causal influences determining it. Intuitively, we want a world-model that predicts that if we move closer to a heat-source, we’ll get sensory data that tells us we’re getting hotter.
 
 The internal model that encodes how we expect our sense data to correlate with our environmental states is called a **Generative Model**, and is referred to by Friston as the G-density. Our G-density tells us the joint probability of experiencing some sense data and a corresponding environmental state: $$P(T,S)$$
 
 You can imagine this as a big table that assigns a probability to each possible pair of values. A good model in this case would assign a high probability to the combination:
+
 $$P(high\ temp, lots\ of\ spikes)$$
+
 and a low probability to things like:
+
 $$P(high\ temp, few\ spikes)$$
 
 We will also want a function that represents our current ‘best-guess’ as to the causes of our sensory input, which we’ll call the R-density (for Recognition): $$q(T)$$
@@ -143,7 +148,7 @@ $$= \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$$
 
 Now, any R-density (that is, any $q(T)$) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a $q(T)$ to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
 
-To get around this, we’ll rewrite the true posterior $P(T | S)$ using some pretty basic probability theory identities:
+To get around this, we’ll rewrite the true posterior $P(T|S)$ using some pretty basic probability theory identities:
 
 $$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
 
