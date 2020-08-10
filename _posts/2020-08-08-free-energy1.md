@@ -148,7 +148,11 @@ $$= \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$$
 
 Now, any R-density (that is, any $q(T)$) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a $q(T)$ to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
 
-To get around this, we’ll rewrite the true posterior $P(T|S)$ using some pretty basic probability theory identities:
+To get around this, we’ll rewrite the true posterior
+
+$$P(T|S)$$
+
+using some pretty basic probability theory identities:
 
 $$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
 
@@ -160,7 +164,7 @@ If we take the natural log of both sides:
 
 $$\ln{P \left( T \middle| S \right)} = \ln{\frac{P\left( T,S \right)}{P\left( S \right)} = \ln{P\left( T,S \right)} - \ln{P \left( S \right)}}$$
 
-Plugging this expression for $P(T|S)$ into our KL Divergence we get:
+Plugging this expression for $P(T\|S)$ into our KL Divergence we get:
 
 $$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{q\left( T \right) - \ln{P\left( T,S \right) + \ln{P\left( S \right)}}}}\rbrack$$
 
@@ -208,7 +212,7 @@ $$F\  \geq \  - \ln{P(S)}$$
 
 More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them!
 
-So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior, $P(E|S)$!
+So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior, $P(E\|S)$!
 
 ## Another form of the free energy:
 
