@@ -92,15 +92,17 @@ Bayes theorem tells us the optimal way to update our beliefs given some new evid
 
 What we want is to update our belief about the state of the environmental temperature, given our current sensory data:
 
-\[Let\ P(Temp = 37) \equiv P(T)\] \[Let\ P(Sensation = 40\ spikes\ ) \equiv P(S)\]
+$$Let\ P(Temp = 37) \equiv P(T)$$
 
-\[P(T=37|S=40)\]
+$$Let\ P(Sensation = 40\ spikes\ ) \equiv P(S)$$
+
+$$P(T=37|S=40)$$
 
 So our hypothesis is that the temperature is 37 degrees, and the evidence we're using to evaluate it is the 40 spikes we received in the last few seconds.
 
 Now if we assume that our environmental states are a continuous variable (temperature is just a real number) then we can make the denominator into an integral over the environmental states (possible temperatures):
 
-\[P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\int_{}^{}{P\left( S \middle| T \right)P\left( T \right)\text{dT}}}\]
+$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\int_{}^{}{P\left( S \middle| T \right)P\left( T \right)\text{dT}}}$$
 
 And there you have it. All you need to do to perfectly understand the world is know the probability of experiencing some sensory data given a particular environmental state, and evaluate the probability of experiencing that sensory data under every possible hypothetical temperature. Very simple stuff!
 
@@ -108,20 +110,20 @@ Okay, so that integral is intractable, which is formal mathematical language for
 
 ## Approximating your posterior
 
-We want to find the **posterior probability** (the probability we get after applying a Bayesian update) that: \[P(T=37|S)\]
+We want to find the **posterior probability** (the probability we get after applying a Bayesian update) that: $$P(T=37|S)$$
 
 It would really help us control our body temperature if we understood the causal influences determining it. Intuitively, we want a world-model that predicts that if we move closer to a heat-source, we’ll get sensory data that tells us we’re getting hotter.
 
-The internal model that encodes how we expect our sense data to correlate with our environmental states is called a **Generative Model**, and is referred to by Friston as the G-density. Our G-density tells us the joint probability of experiencing some sense data and a corresponding environmental state: \[P(T,S)\].
+The internal model that encodes how we expect our sense data to correlate with our environmental states is called a **Generative Model**, and is referred to by Friston as the G-density. Our G-density tells us the joint probability of experiencing some sense data and a corresponding environmental state: $$P(T,S)$$
 
 You can imagine this as a big table that assigns a probability to each possible pair of values. A good model in this case would assign a high probability to the combination:
-\[P(high\ temp, lots\ of\ spikes)\]
+$$P(high\ temp, lots\ of\ spikes)$$
 and a low probability to things like:
-\[P(high\ temp, few\ spikes)\]
+$$P(high\ temp, few\ spikes)$$
 
-We will also want a function that represents our current ‘best-guess’ as to the causes of our sensory input, which we’ll call the R-density (for Recognition): \[q(T)\]
+We will also want a function that represents our current ‘best-guess’ as to the causes of our sensory input, which we’ll call the R-density (for Recognition): $$q(T)$$
 
-This is just a probability distribution over the state of the environment, and we’re using ***q*** instead of ***p*** to remind us that it’s a distribution we’re guessing at.
+This is just a probability distribution over the state of the environment, and we’re using $q$ instead of $p$ to remind us that it’s a distribution we’re guessing at.
 
 We now need another fancy piece of information theory: the **Kullback-Liebler (KL) Divergence**[^9]
 
@@ -131,61 +133,61 @@ We now need another fancy piece of information theory: the **Kullback-Liebler (K
 
 We want the KL divergence because we want to know how close or far away our best guess is to the true posterior belief *if we could compute that ugly integral*
 
-We write the KL-divergence between our guess *q(T)* about the environment and the optimal posterior belief about the environment from Baye's theorem.
+We write the KL-divergence between our guess $q(T)$ about the environment and the optimal posterior belief about the environment from Baye's theorem.
 
-\[D_{\text{KL}}(q(T)||P(T|S))\  = \ \int_{}^{}{\text{dT}\ q( T )\ln\frac{q\left( T \right)}{P\left( T \middle| S \right)}}\]
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \ \int_{}^{}{\text{dT}\ q( T )\ln\frac{q\left( T \right)}{P\left( T \middle| S \right)}}$$
 
 which we rearrange using the property of the logarithm to:
 
-\[= \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}\]
+$$= \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$$
 
-Now, any R-density (that is, any *q(T)*) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a *q(T)* to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
+Now, any R-density (that is, any $q(T)$) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a $q(T)$ to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
 
-To get around this, we’ll rewrite the true posterior **P(T | S)** using some pretty basic probability theory identities:
+To get around this, we’ll rewrite the true posterior $P(T | S)$ using some pretty basic probability theory identities:
 
-\[P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}\]
+$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
 
-\[P\left( T,S \right) = P\left( S \middle| T \right)P\left( T \right)\]
+$$P\left( T,S \right) = P\left( S \middle| T \right)P\left( T \right)$$
 
-\[\therefore P\left( T \middle| S \right) = \frac{P\left( T,S \right)}{P\left( S \right)}\]
+$$\therefore P\left( T \middle| S \right) = \frac{P\left( T,S \right)}{P\left( S \right)}$$
 
 If we take the natural log of both sides:
 
-\[\ln{P \left( T \middle| S \right)} = \ln{\frac{P\left( T,S \right)}{P\left( S \right)} = \ln{P\left( T,S \right)} - \ln{P \left( S \right)}}\]
+$$\ln{P \left( T \middle| S \right)} = \ln{\frac{P\left( T,S \right)}{P\left( S \right)} = \ln{P\left( T,S \right)} - \ln{P \left( S \right)}}$$
 
-Plugging this expression for **P(T|S)** into our KL Divergence we get:
+Plugging this expression for $P(T|S)$ into our KL Divergence we get:
 
-\[D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{q\left( T \right) - \ln{P\left( T,S \right) + \ln{P\left( S \right)}}}}\rbrack\]
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{q\left( T \right) - \ln{P\left( T,S \right) + \ln{P\left( S \right)}}}}\rbrack$$
 
-Combining the first two *ln* terms:
+Combining the first two $\ln$ terms:
 
-\[D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\  + \ \ln{P\left( S \right)}\ }}\rbrack\]
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\  + \ \ln{P\left( S \right)}\ }}\rbrack$$
 
-Something you may notice about this is that we now have our KL divergence in terms of only our **R-density, q(T)**, and our **G-density, P(T,S)**, plus a **‘surprisal’ term lnP(S)** which - as we discussed above - just tells us how unexpected some sense data is. This looks like progress!
+Something you may notice about this is that we now have our KL divergence in terms of only our **R-density**, $q(T)$, and our **G-density**, $P(T,S)$, plus a **‘surprisal’ term** $\ln P(S)$ which - as we discussed above - just tells us how unexpected some sense data is. This looks like progress!
 
 We can pull the **lnP(S)** out from under the integral because we have the requirement that:
 
-\[\int_{}^{}{\text{dT} q \left( T \right) = 1}\]
+$$\int_{}^{}{\text{dT} q \left( T \right) = 1}$$
 
 This is just the requirement that probabilities sum to one. Integration is linear, so we have:
 
-\[D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{\text{dT}\ q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ }} + \int_{}^{}{dT\ q(T)\ \ln{P(S)}}\]
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{\text{dT}\ q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ }} + \int_{}^{}{dT\ q(T)\ \ln{P(S)}}$$
 
-\[D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{} \text{dT}\left\lbrack q \left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack + \ln{P\left( S \right) \times 1}\]
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{} \text{dT}\left\lbrack q \left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack + \ln{P\left( S \right) \times 1}$$
 
 Now, we define:
 
-\[F\  \equiv \int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack\]
+$$F\  \equiv \int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack$$
 
 Giving us:
 
-\[D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) = F + \ln{P(S})\]
+$$D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) = F + \ln{P(S})$$
 
 An important property of the KL Divergence is that it is always greater than or equal to zero. The formula above tells us that if our KL divergence went to zero (that is, if our R-density became a perfect approximation of our true posterior), we would have:
 
-\[0 = F + \ln{P\left( S \right)}\]
+$$0 = F + \ln{P\left( S \right)}$$
 
-\[F = - \ln{P(S)}\]
+$$F = - \ln{P(S)}$$
 
 If you haven’t guessed already, the F we defined above is ‘free energy’. Now we have a key result in the Free Energy literature, one which Friston refers to all the time:
 
@@ -193,15 +195,15 @@ If you haven’t guessed already, the F we defined above is ‘free energy’. N
 
 We can see this because we know that the KL divergence is always greater than or equal to zero, implying:
 
-\[D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) \geq 0\]
+$$D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) \geq 0$$
 
-\[\Rightarrow F\  + \ \ln{P\left( S \right)} \geq \ 0\]
+$$\Rightarrow F\  + \ \ln{P\left( S \right)} \geq \ 0$$
 
-\[F\  \geq \  - \ln{P(S)}\]
+$$F\  \geq \  - \ln{P(S)}$$
 
 More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them!
 
-So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior, **P(E|S)**!
+So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior, $P(E|S)$!
 
 ## Another form of the free energy:
 
@@ -209,42 +211,40 @@ We’re going to need to massage this equation for F a bit more to see if someth
 
 Again, using the linearity of integration, and the properties of the logarithm, we have:
 
-\[F\  \equiv \int_{}^{}\text{dT}\left\lbrack \\ q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack\]
+$$F\  \equiv \int_{}^{}\text{dT}\left\lbrack \\ q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack$$
 
-\[F\  = \ \int_{}^{}\text{dT}{\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}\]
+$$F\  = \ \int_{}^{}\text{dT}{\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}$$
 
 From statistical mechanics, we say that the expected value (or average) energy of a system is simply the sum over all energy states, times the probability of each energy state:
 
-\[E\lbrack X\rbrack\  = \ \sum_{i}^{}{X_{i}P(X_{i})}\]
+$$E\lbrack X\rbrack\  = \ \sum_{i}^{}{X_{i}P(X_{i})}$$
 
 And in the continuous case:
 
-\[\displaystyle \operatorname {E} [X]=\int _{\mathbb {R} }xP(x)\,dx\]
+$$\displaystyle \operatorname {E} [X]=\int _{\mathbb {R} }xP(x)\,dx$$
 
 We also have the entropy of a system (precisely the average surprise in the probability distribution) as:
 
-\[\displaystyle \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log \mathrm {P} (x_{i}})\]
+$$ \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log \mathrm {P} (x_{i}})$$
 
 
 ![A close up of a device Description automatically generated](/img/free_energy1/media/image4.png)
 
 Entropy can be a somewhat tricky term, but I think this way of thinking about it is fairly intuitive: it’s just the amount you expect to be surprised by a given probability distribution. Some distributions are very tightly clustered around their average values, and so they are very unsurprising, hence low entropy. The opposite of this are the so-called maximum-entropy distributions, which means every sample is maximally surprising.
 
-Equipped with these ideas, we define a function **E(T,S)**:
+Equipped with these ideas, we define a function $E(T,S)$:
 
-\[\mathbf{Ε}(T,S)\  \equiv - \ln{P(T,S)}\]
+$$\mathbf{Ε}(T,S)\  \equiv - \ln{P(T,S)}$$
 
 And this allows us to rewrite our free energy term F as:
 
-\[F\  = \ \int_{}^{}{\text{dT}\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}\]
+$$F\  = \ \int_{}^{}{\text{dT}\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}$$
 
-\[F = \int_{}^{}{\text{dT}\ q\left( T \right)\mathbf{E}\left( T,S \right)} + \int_{}^{}{\text{dT}\ q\left( T \right)\ln{q\left( T \right)}} \]
+$$F = \int_{}^{}{\text{dT}\ q\left( T \right)\mathbf{E}\left( T,S \right)} + \int_{}^{}{\text{dT}\ q\left( T \right)\ln{q\left( T \right)}} $$
 
-\[F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)\]
+$$F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)$$
 
 Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy[^10]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.
-
-<!-- \[\displaystyle F\equiv U-TS,\] -->
 
 In the next post, we’ll take the background we developed here and build on it. We’ll take a deeper look at the R and G densities and some simplifying assumptions that allow us to write neat versions of them. The result will show the deep connection between the Free Energy Principle and Predictive Coding in the brain.
 
