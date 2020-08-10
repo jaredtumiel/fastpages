@@ -4,10 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
+more coming here soon
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+### Where else to find me
 
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+I have a [podcast](https://podcasts.apple.com/za/podcast/bit-of-a-tangent/id1470855694) where I discuss AI, medicine, philosophy, and whatever else is on my mind with the eminently interesting [Gianluca](https://twitter.com/QVagabond)
