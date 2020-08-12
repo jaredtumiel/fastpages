@@ -45,7 +45,7 @@ You get a constant stream of new information through your senses, and your brain
 
 > Eye on the (causal) prize
 
-**Our first big insight into the FEP is that if you want to keep doing the survival thing, you should care not about the sense data itself, but about the stuff out there that causes it.** The sense data is just receptors firing more or less often. What matters is that you have receptors that reliably fire in a pattern that tells you useful things like:
+**Our first big insight into the FEP is that if you want to keep doing the survival thing, you should care not about the sense data itself, but about the stuff out there that causes it - you need to keep your eye on the causal prize!** The sense data is just receptors firing more or less often. What matters is that you have receptors that reliably fire in a pattern that tells you useful things like:
 
 - there's a tiger there and she looks pissed
 - it smells like chocolate cookies have just come out the oven, so you might get fed soon
@@ -57,9 +57,9 @@ So your sense-data isn't random - it has external causes - but it's not perfectl
 - is that the rustling of the wind in the leaves, or another, even scarier tiger stalking you?
 - is the pressure of your 'deep-tissue sports-massage' a welcome relief from stiffness, or categorical proof that your masseuse is a sadist?
 
-> Macro-pattern, micro-random
+> Macro-stable, micro-random
 
-In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. **This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern**. Friston often refers to this as possessing an 'attracting set' - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.
+In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. **This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern - you can be micro-random but must be macro-stable!**. Friston often refers to this as possessing an 'attracting set' - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.
 
 There are lots of ways you could configure all of the atoms that currently constitute 'you'. Unfortunately, the vast majority are unworkable, probably because the most likely arrangement of those atoms is spread in a thin mist somewhere between here and Neptune. The small subset of all possible ways to configure yourself that keeps you ‘you’ is your phenotype, and homeostasis is basically the process of keeping yourself in those states through feedback and self-regulation. To survive long-term, you need to have a high probability of occupying those states that are compatible with life (and a low probability of becoming a thin mist somewhere between here and Neptune)
 
@@ -69,7 +69,7 @@ Let’s make a concrete example out of temperature
 
 Your body keeps itself near 37 degrees (Celsius), all the time[^6]
 
-If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is bequipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body *itself* is an implicit expectation of a high probability of sensing that temperature[^7].
+If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is equipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body *itself* is an implicit expectation of a high probability of sensing that temperature[^7].
 
 So your evolved biology ‘expects’ 37 degrees , and when it doesn’t get it it’s surprised. This '*surprisal*' is actually a formal term from information theory, where we quantify the amount of surprise as the negative natural logarithm of the probability of the observed outcome:
 
@@ -83,7 +83,7 @@ Let's drill a little deeper into this business of sensing something and - on the
 
 > All Reality is Virtual Reality
 
-**This gives us our third big clue about the FEP: we don’t directly experience the environment, only the noisy sensations that correlate with it.** This is really the jumping off point for the FEP: as an organism, we need to minimise our surprisal (we don’t want to find ourselves in 800 degree heat, and do want to find ourselves at 37 degrees, with high probability), but we only have access to our noisy sense data, and we don't know what causally determines our temperature in the environment.
+**This gives us our third big clue about the FEP: we don’t directly experience the environment, only the noisy sensations that correlate with it - we're one layer removed from the world, exploring the virtual reality of our sense data and inferring things about the reality behind it.** This is really the jumping off point for the FEP: as an organism, we need to minimise our surprisal (we don’t want to find ourselves in 800 degree heat, and do want to find ourselves at 37 degrees, with high probability), but we only have access to our noisy sense data, and we don't know what causally determines our temperature in the environment.
 
 ## Getting Bayesian
 
@@ -97,12 +97,15 @@ Bayes theorem tells us the optimal way to update our beliefs given some new evid
 
 ![Bayes Theorem](/img/free_energy1/media/bayes.png)
 
-{% include info.html text="**A brief note on integral notation:**:
-I often write integrals like this: 
-$ \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$ 
-with the $dT$ at the front of the integral. If you're used to seeing it at the back, like this:
-$ \ \int_{}^{}{\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}dT}$
-don't freak out, they're exactly the same
+{% include info.html text="A brief note on integral notation:
+
+I will often write integrals like this: 
+$ \ \int_{}^{}{dx\ f(x)}$ 
+with the $dx$ at the front of the integral. If you're used to seeing it at the back, like this:
+$ \ \int_{}^{} f(x)\ dx$
+don't freak out, they're exactly the same.
+
+Also, I'm going to leave the bounds of integration out for now. We can add them in if we need them later
 " %}
 
 What we want is to update our belief about the state of the environmental temperature, given our current sensory data. Let's write the prior probability that our temperature is 37º as $P(T)$, and the probability that we receive 40 incoming neural impulses in a given time as $P(S)$. We want to know the updated probability that our temperature is 37º, given that we sense 40 neural spikes: 
@@ -111,13 +114,38 @@ $$P(T|S)$$
 
 So our hypothesis is that the temperature is 37 degrees, and the evidence we're using to evaluate it is the 40 spikes we received in the last few seconds.
 
+$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\blue{P(S)}}$$
+
+{% include info.html text=
+The $\blue{P(S)}$ term seems to cause trouble, so I'm going to spend a little extra time explaining it here, using the example of modelling the weather today based on yesterday's weather:
+
+The probability of it being sunny today, $P(\text{Sunny})$ can be thought of as the sum of the two possibilities - it could be sunny today, given that yesterday was sunny, or it could be sunny, given that yesterday was **not** sunny:
+
+$$P(\text{Sunny}) = P(\text{Sunny}|\text{sun yesterday})P(\text{sun yesterday}) + P(\text{Sunny}|\text{no sun yesterday})P(\text{no sun yesterday})$$
+
+Instead of the sum of these two complementary outcomes, we could sum over each different possibility:
+
+$$P(\text{Sunny}) = P(\text{Sunny}|\text{sun})P(\text{sun}) + P(\text{Sunny}|\text{rain})P(\text{rain}) + P(\text{Sunny|snow})P(\text{snow}) +\\ P(\text{Sunny|tornado})P(\text{tornado}) + ...$$
+
+Which we can compress as a sum over each possible weather state:
+
+$$P(\text{Sunny}) = \sum_{weather}{P(\text{Sunny|weather})P(\text{weather})}$$
+" %}
+
+The probability of some sensation $\blue{P(S)}$ can be thought of as the total probability we get when we add up all the possible ways of getting a particular sensation $S$. We can get $S$ by adding up the probability of S given a particular temperature, and the probability of getting S given 
+
+If temperature were discrete, we would write the $P(S)$ term as the sum over all the temperatures that could generate that sensation, like this:
+
+$$\blue{P(S) = \sum_{i}{P(S|T_i)P(T_i)}}$$
+" %}
+
 Now if we assume that our environmental states are a continuous variable (temperature is just a real number) then we can make the denominator into an integral over the environmental states (possible temperatures):
 
-$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\int_{}^{}{P\left( S \middle| T \right)P\left( T \right)\text{dT}}}$$
+$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\blue{\int_{}^{}{P\left( S \middle| T \right)P\left( T \right)\text{dT}}}}$$
 
 And there you have it. All you need to do to perfectly understand the world is know the probability of experiencing some sensory data given a particular environmental state, and evaluate the probability of experiencing that sensory data under every possible hypothetical temperature. Very simple stuff!
 
-Okay, so that integral is intractable, which is formal mathematical language for ‘Wolfram Alpha can’t compute it’. This is a problem for the FEP, and much of the rest of our effort will go into getting around that integral. When we can’t get an exact result, we turn to approximate methods. We’re going to manipulate our equation above until it’s in a form that allows us to do **approximate Bayesian inference**.
+Okay, so that integral is intractable, which is formal mathematical language for *‘Wolfram Alpha can’t compute it’*. This is a problem for the FEP, and much of the rest of our effort will go into getting around that integral. When we can’t get an exact result, we turn to approximate methods. We’re going to manipulate our equation above until it’s in a form that allows us to do **approximate Bayesian inference**.
 
 ## Approximating your posterior
 
@@ -220,6 +248,8 @@ $$D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) \geq 0$$
 $$\Rightarrow F\  + \ \ln{P\left( S \right)} \geq \ 0$$
 
 $$F\  \geq \  - \ln{P(S)}$$
+
+> Free energy is the surprisal an organism experiences upon sampling some data, given a generative model.
 
 More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them!
 
