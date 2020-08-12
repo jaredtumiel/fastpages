@@ -134,15 +134,15 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <p>The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork…</p>
 
-<h2 id="covered-in-this-post">Covered in this post:</h2>
+<h2 id="by-the-end-of-this-post-you-will-understand">By the end of this post you will understand:</h2>
 
 <ul>
   <li>Bayesian inference</li>
-  <li>Phenotype as set of viable states</li>
+  <li>‘Phenotype’ as a set of viable states</li>
   <li>Entropy and expected surprise</li>
   <li>Kullback-Liebler Divergence</li>
   <li>Recognition- and Generative-densities</li>
-  <li>Derivation of ‘free energy’ term</li>
+  <li>The derivation of the ‘free energy’ term</li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -150,7 +150,7 @@ window.onload = wrap_img;
 <p>Karl Friston’s Free Energy Principle has fascinated and baffled me since I first heard about it in a SlateStarCodex blog post<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>. Ever since, I’ve spent a good chunk of my spare time trying to understand the ideas and context that underpin the theory. Friston’s work is notoriously difficult to understand, something which Friston himself (and definitely the people who read his work) acknowledge with a wry shrug<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>. This comes down to a few things:</p>
 
 <ul>
-  <li>the maths itself is fairly daunting (although - I hope to show - not impenetrable, and well worth understanding), and Friston’s notation can be opaque until you get used to it.</li>
+  <li>the maths itself is fairly daunting and Friston’s notation can be opaque until you get used to it. But, I’ll show you in this article that it’s not impenetrable and is well worth understanding!</li>
   <li>the fields that Friston draws on to derive the FEP are diverse and any given person is unlikely to have studied them all<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>. I happen to think this is what’s most exciting about the FEP, because it provides an excuse to learn more about:
     <ul>
       <li>Statistical Mechanics, especially non-equilibrium stat-mech</li>
@@ -158,7 +158,7 @@ window.onload = wrap_img;
       <li>Neuroscience and Predictive Coding</li>
       <li>Dynamic systems and (stochastic) differential equations</li>
       <li>Information theory</li>
-      <li>Variational methods</li>
+      <li>Variational inference methods</li>
       <li>Path-integral formulations and the Principle of Least Action</li>
       <li>Embodied cognition</li>
       <li>Bayesian inference, action under uncertainty</li>
@@ -167,13 +167,17 @@ window.onload = wrap_img;
   </li>
 </ul>
 
+<p>For this post, don’t worry about that list, as I’ll introduce concepts as we need them!</p>
+
 <p>To begin, let’s look at some motivating ideas, which we’ll keep coming back to, with more and more formalism to back them up.</p>
 
 <h2 id="you-a-thing-in-the-world">You: a thing in the world</h2>
 
-<p>You are a thing<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> and you live in a world which you do not fully understand (or at-least, it should feel that way, if you’re paying any attention).</p>
+<p><strong>You are a thing</strong> (fully enlightened Buddhists with no sense-of-self don’t @me yet please, it’s just a starting point) and you live in a world which you do not fully understand (or at-least, it should feel that way, if you’re paying any attention to how crazy things are right now).</p>
 
 <p>You get a constant stream of new information through your senses, and your brain somehow needs to use this information-deluge to do things like make exceptional scrambled eggs, renew your driver’s licence, floss your teeth, and other crucial survival-skills.</p>
+
+<h3 id="eye-on-the-causal-prize">Eye on the (causal) prize</h3>
 
 <p><strong>Our first big insight into the FEP is that if you want to keep doing the survival thing, you should care not about the sense data itself, but about the stuff out there that causes it.</strong> The sense data is just receptors firing more or less often. What matters is that you have receptors that reliably fire in a pattern that tells you useful things like:</p>
 
@@ -191,6 +195,8 @@ window.onload = wrap_img;
   <li>is the pressure of your ‘deep-tissue sports-massage’ a welcome relief from stiffness, or categorical proof that your masseuse is a sadist?</li>
 </ul>
 
+<h3 id="macro-pattern-micro-random">Macro-pattern, micro-random</h3>
+
 <p>In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. <strong>This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern</strong>. Friston often refers to this as possessing an ‘attracting set’ - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.</p>
 
 <p>There are lots of ways you could configure all of the atoms that currently constitute ‘you’. Unfortunately, the vast majority are unworkable, probably because the most likely arrangement of those atoms is spread in a thin mist somewhere between here and Neptune. The small subset of all possible ways to configure yourself that keeps you ‘you’ is your phenotype, and homeostasis is basically the process of keeping yourself in those states through feedback and self-regulation. To survive long-term, you need to have a high probability of occupying those states that are compatible with life (and a low probability of becoming a thin mist somewhere between here and Neptune)</p>
@@ -199,13 +205,13 @@ window.onload = wrap_img;
 
 <h2 id="its-getting-hot-in-here-and-thats-surprising">It’s getting hot in here (and that’s surprising)</h2>
 
-<p>Your body keeps itself near 37 degrees (Celsius), all the time<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup></p>
+<p>Your body keeps itself near 37 degrees (Celsius), all the time<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">5</a></sup></p>
 
-<p>If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is bequipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body <em>itself</em> is an implicit expectation of a high probability of sensing that temperature<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>.</p>
+<p>If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is bequipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body <em>itself</em> is an implicit expectation of a high probability of sensing that temperature<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">6</a></sup>.</p>
 
 <p>So your evolved biology ‘expects’ 37 degrees , and when it doesn’t get it it’s surprised. This ‘<em>surprisal</em>’ is actually a formal term from information theory, where we quantify the amount of surprise as the negative natural logarithm of the probability of the observed outcome:</p>
 
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ln P(X = x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>ln</mi><mo>⁡</mo><mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">- \ln P(X = x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>
 
 <p>All this is saying is that the lower the probability we expect for an event, the more surprised we should be if we do in-fact observe that event, and conversely, if we think there is a high probability of an event happening, we should not be very surprised to see it occur. If you enter the lottery, and I tell you you’ve won, you’d be really really surprised, because you know the probability of that is small. If I tell you you’ve lost, you’re not really surprised at all, as that was always the likely outcome.</p>
 
@@ -213,11 +219,13 @@ window.onload = wrap_img;
 
 <p>Let’s drill a little deeper into this business of sensing something and - on the basis of that sensation - forming accurate beliefs about the temperature of the environment and your body. It’s worth saying: you don’t have a nice digital-thermometer organ attached somewhere to your body which your brain can just look at. You have millions of tiny sensory receptors, which fire because of the energetic bumping and jostling of atoms hitting the receptor. For a temperature receptor, when it’s hotter, the atoms hitting it have a higher average energy, which makes it more likely that the neuron the receptor is attached to is <em>depolarised</em> and fires an <strong>action potential</strong> (“spikes”). We can roughly reason that in hotter environments, our temperature receptors are firing more often (but only on average - it’s still a “noisy” signal), and so maybe if our brain counted the number of spikes in a certain time, it could learn a mapping from the state of the sensory data it receives to the probable temperature of the environment.</p>
 
+<h3 id="all-reality-is-virtual-reality">All Reality is Virtual Reality</h3>
+
 <p><strong>This gives us our third big clue about the FEP: we don’t directly experience the environment, only the noisy sensations that correlate with it.</strong> This is really the jumping off point for the FEP: as an organism, we need to minimise our surprisal (we don’t want to find ourselves in 800 degree heat, and do want to find ourselves at 37 degrees, with high probability), but we only have access to our noisy sense data, and we don’t know what causally determines our temperature in the environment.</p>
 
 <h2 id="getting-bayesian">Getting Bayesian</h2>
 
-<p>As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup></p>
+<p>As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">7</a></sup></p>
 
 <p><img src="/img/free_energy1/media/image2.png" alt="Bayesian Inference!!" /></p>
 
@@ -267,7 +275,7 @@ window.onload = wrap_img;
 
 <p>This is just a probability distribution over the state of the environment, and we’re using $q$ instead of $p$ to remind us that it’s a distribution we’re guessing at.</p>
 
-<p>We now need another fancy piece of information theory: the <strong>Kullback-Liebler (KL) Divergence</strong><sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup></p>
+<p>We now need another fancy piece of information theory: the <strong>Kullback-Liebler (KL) Divergence</strong><sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">8</a></sup></p>
 
 <p><strong>The KL Divergence just tells us how different two different probability distributions are:</strong></p>
 
@@ -378,7 +386,7 @@ window.onload = wrap_img;
 
 <p>Entropy can be a somewhat tricky term, but I think this way of thinking about it is fairly intuitive: it’s just the amount you expect to be surprised by a given probability distribution. Some distributions are very tightly clustered around their average values, and so they are very unsurprising, hence low entropy. The opposite of this are the so-called maximum-entropy distributions, which means every sample is maximally surprising.</p>
 
-<p>Equipped with these ideas, we define a function $E(T,S)$:</p>
+<p>Equipped with these ideas, we define an <strong>energy-like</strong> function $E(T,S)$:</p>
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">E</mi><mo stretchy="false">(</mo><mi>T</mi><mo separator="true">,</mo><mi>S</mi><mo stretchy="false">)</mo><mtext> </mtext><mo>≡</mo><mo>−</mo><mi>ln</mi><mo>⁡</mo><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>T</mi><mo separator="true">,</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{Ε}(T,S)\  \equiv - \ln{P(T,S)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf">E</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></span></span>
 
@@ -390,14 +398,27 @@ window.onload = wrap_img;
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><msubsup><mo>∫</mo><mrow></mrow><mrow></mrow></msubsup><mrow><mtext>dT </mtext><mi>q</mi><mrow><mo fence="true">(</mo><mi>T</mi><mo fence="true">)</mo></mrow><mi mathvariant="bold">E</mi><mrow><mo fence="true">(</mo><mi>T</mi><mo separator="true">,</mo><mi>S</mi><mo fence="true">)</mo></mrow></mrow><mo>−</mo><mrow><mo fence="true">(</mo><mo>−</mo><msubsup><mo>∫</mo><mrow></mrow><mrow></mrow></msubsup><mrow><mtext>dT </mtext><mi>q</mi><mrow><mo fence="true">(</mo><mi>T</mi><mo fence="true">)</mo></mrow><mi>ln</mi><mo>⁡</mo><mrow><mi>q</mi><mrow><mo fence="true">(</mo><mi>T</mi><mo fence="true">)</mo></mrow></mrow></mrow><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.27195em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1129000000000002em;"><span style="top:-1.08805em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span><span style="top:-3.1129000000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord text"><span class="mord">dT</span></span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathbf">E</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord">−</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1129000000000002em;"><span style="top:-1.08805em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span><span style="top:-3.1129000000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord text"><span class="mord">dT</span></span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></span>
 
-<p>Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>. This version of the formula is something you’ll hear Friston refer to often, because it’s analagous to the  <strong>Helmholtz free energy</strong> from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.</p>
+<p>Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">9</a></sup>. This version of the formula is something you’ll hear Friston refer to often, because it’s analagous to the  <strong>Helmholtz free energy</strong> from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.</p>
+
+<h2 id="conclusion-and-summary">Conclusion and Summary</h2>
+
+<p>We motivated the Free Energy Principle with three big ideas about living organisms:</p>
+<ul>
+  <li>Eye on the (causal) prize</li>
+  <li>Macro-pattern, micro-random</li>
+  <li>All Reality is Virtual Reality</li>
+</ul>
 
 <p>In the next post, we’ll take the background we developed here and build on it. We’ll take a deeper look at the R and G densities and some simplifying assumptions that allow us to write neat versions of them. The result will show the deep connection between the Free Energy Principle and Predictive Coding in the brain.</p>
 
 <p>If something here doesn’t make sense, is clearly wrong, or got you interested, let me know here or on twitter <a href="https://twitter.com/jnearestn">@jnearestn</a>
 If you don’t want to wait for the next post, <a href="https://arxiv.org/abs/1705.09156">The Free Energy Principle for Action and Perception: A Mathematical Review</a> is the best place to start out on your own, and I owe it a great deal in helping write this post!</p>
 
-<p>Cover image: Andrestand on <a href="https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk">Flickr</a></p>
+<hr />
+
+<p>Special thanks to <a href="https://twitter.com/qvagabond">Gianluca</a> for his detailed comments on drafts of this post</p>
+
+<p><em>Cover image: Andrestand:</em> <a href="https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk">Flickr</a></p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
@@ -411,9 +432,6 @@ If you don’t want to wait for the next post, <a href="https://arxiv.org/abs/17
     </li>
     <li id="fn:4" role="doc-endnote">
       <p>in fact, this multiplicity of disciplines seems to set off a percentage of people’s BS-detectors, sort of like when Deepak Chopra starts invoking Quantum Mechanics as an explanation for everything <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5" role="doc-endnote">
-      <p>Fully realised enlightened Buddhists with no sense-of-self don’t @ me yet please, it’s just a starting point <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:6" role="doc-endnote">
       <p>if you don’t like 37, just use whatever number you were told by the last person who pointed one of those COVID-screening-thermometer-guns at your head <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
