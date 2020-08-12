@@ -63,7 +63,7 @@ In the time you read all of the above, you breathed several times, each of your 
 
 There are lots of ways you could configure all of the atoms that currently constitute 'you'. Unfortunately, the vast majority are unworkable, probably because the most likely arrangement of those atoms is spread in a thin mist somewhere between here and Neptune. The small subset of all possible ways to configure yourself that keeps you ‘you’ is your phenotype, and homeostasis is basically the process of keeping yourself in those states through feedback and self-regulation. To survive long-term, you need to have a high probability of occupying those states that are compatible with life (and a low probability of becoming a thin mist somewhere between here and Neptune)
 
-Let’s make a concrete example out of temperature
+Let’s make a concrete example out of temperature...
 
 ## It’s getting hot in here (and that's surprising)
 
@@ -77,7 +77,7 @@ $$ - \ln P(X = x)$$
 
 All this is saying is that the lower the probability we expect for an event, the more surprised we should be if we do in-fact observe that event, and conversely, if we think there is a high probability of an event happening, we should not be very surprised to see it occur. If you enter the lottery, and I tell you you’ve won, you'd be really really surprised, because you know the probability of that is small. If I tell you you’ve lost, you're not really surprised at all, as that was always the likely outcome.
 
-![graph of -lnP(x)](/images/free_energy1/media/image1.png)
+![graph of -lnP(x)]({{ site.baseurl }}/images/free_energy1/media/image1.png)
 
 Let's drill a little deeper into this business of sensing something and - on the basis of that sensation - forming accurate beliefs about the temperature of the environment and your body. It’s worth saying: you don’t have a nice digital-thermometer organ attached somewhere to your body which your brain can just look at. You have millions of tiny sensory receptors, which fire because of the energetic bumping and jostling of atoms hitting the receptor. For a temperature receptor, when it’s hotter, the atoms hitting it have a higher average energy, which makes it more likely that the neuron the receptor is attached to is *depolarised* and fires an **action potential** ("spikes"). We can roughly reason that in hotter environments, our temperature receptors are firing more often (but only on average - it's still a "noisy" signal), and so maybe if our brain counted the number of spikes in a certain time, it could learn a mapping from the state of the sensory data it receives to the probable temperature of the environment.
 
@@ -89,13 +89,13 @@ Let's drill a little deeper into this business of sensing something and - on the
 
 As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for[^8]
 
-![Bayesian Inference!!](/images/free_energy1/media/image2_nyan.png)
+![Bayesian Inference!!]({{ site.baseurl }}/images/free_energy1/media/image2_nyan.png)
 
 *(obligatory link to [Yudkowsky on Bayes Theorem](https://yudkowsky.net/rational/bayes). If this is new, read this now)*
 
 Bayes theorem tells us the optimal way to update our beliefs given some new evidence. Doing this is sometimes called Bayesian inference, or Bayesian updating, or - controversially - as "not making up your beliefs".
 
-![Bayes Theorem](/images/free_energy1/media/bayes.png)
+![Bayes Theorem]({{ site.baseurl }}/images/free_energy1/media/bayes.png)
 
 {% include info.html text="A brief note on integral notation:
 
@@ -121,11 +121,11 @@ The $\blue{P(S)}$ term seems to cause trouble, so I'm going to spend a little ex
 
 The probability of it being sunny today, $P(\text{Sunny})$ can be thought of as the sum of the two possibilities - it could be sunny today, given that yesterday was sunny, or it could be sunny, given that yesterday was **not** sunny:
 
-$$P(\text{Sunny}) = P(\text{Sunny}|\text{sun yesterday})P(\text{sun yesterday}) + P(\text{Sunny}|\text{no sun yesterday})P(\text{no sun yesterday})$$
+$$P(\text{Sunny}) =\\ P(\text{Sunny}|\text{sun yesterday})P(\text{sun yesterday}) +\\ P(\text{Sunny}|\text{no sun yesterday})P(\text{no sun yesterday})$$
 
 Instead of the sum of these two complementary outcomes, we could sum over each different possibility:
 
-$$P(\text{Sunny}) = P(\text{Sunny}|\text{sun})P(\text{sun}) + P(\text{Sunny}|\text{rain})P(\text{rain}) + P(\text{Sunny|snow})P(\text{snow}) +\\ P(\text{Sunny|tornado})P(\text{tornado}) + ...$$
+$$P(\text{Sunny}) =\\ P(\text{Sunny}|\text{sun})P(\text{sun}) +\\ P(\text{Sunny}|\text{rain})P(\text{rain}) +\\ P(\text{Sunny|snow})P(\text{snow}) +\\ P(\text{Sunny|tornado})P(\text{tornado}) + ...$$
 
 Which we can compress as a sum over each possible weather state:
 
@@ -170,7 +170,7 @@ We now need another fancy piece of information theory: the **Kullback-Liebler (K
 
 **The KL Divergence just tells us how different two different probability distributions are:**
 
-![KL-divergence](/images/free_energy1/media/image3.png)
+![KL-divergence]({{ site.baseurl }}/images/free_energy1/media/image3.png)
 
 We want the KL divergence because we want to know how close or far away our best guess is to the true posterior belief *if we could compute that ugly integral*
 
@@ -276,7 +276,7 @@ We also have the entropy of a system (precisely the average surprise in the prob
 $$ \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log \mathrm {P} (x_{i}})$$
 
 
-![A close up of a device Description automatically generated](/images/free_energy1/media/image4.png)
+![A close up of a device Description automatically generated]({{ site.baseurl }}/images/free_energy1/media/image4.png)
 
 Entropy can be a somewhat tricky term, but I think this way of thinking about it is fairly intuitive: it’s just the amount you expect to be surprised by a given probability distribution. Some distributions are very tightly clustered around their average values, and so they are very unsurprising, hence low entropy. The opposite of this are the so-called maximum-entropy distributions, which means every sample is maximally surprising.
 
