@@ -244,7 +244,11 @@ $$F\  \geq \  - \ln{P(S)}$$
 
 > Free energy is the surprisal an organism experiences upon sampling some data, given a generative model.
 
-More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them!
+More specifically, **free energy is the surprisal an organism experiences upon sampling some data, given a generative model.** If you're up for it, you should try matching those words to the parts of the equations that encode them! I'll even put the full equation right here in-front of you, with no distracting colours:
+
+$$F\  \geq \  - \ln{P(S)}$$
+
+$$\int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack \geq - \ln P(S)$$
 
 So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior
 $$P(T|S)$$
