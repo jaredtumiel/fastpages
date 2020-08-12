@@ -7,39 +7,43 @@ image: /img/free_energy1/media/path_int.jpg
 
 The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math[^1]. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork...
 
-## Covered in this post:
+## By the end of this post you will understand:
 
 - Bayesian inference
-- Phenotype as set of viable states
+- 'Phenotype' as a set of viable states
 - Entropy and expected surprise
 - Kullback-Liebler Divergence
 - Recognition- and Generative-densities
-- Derivation of 'free energy' term
+- The derivation of the 'free energy' term
 
 ## Introduction
 
 Karl Friston’s Free Energy Principle has fascinated and baffled me since I first heard about it in a SlateStarCodex blog post[^2]. Ever since, I’ve spent a good chunk of my spare time trying to understand the ideas and context that underpin the theory. Friston’s work is notoriously difficult to understand, something which Friston himself (and definitely the people who read his work) acknowledge with a wry shrug[^3]. This comes down to a few things:
 
-- the maths itself is fairly daunting (although - I hope to show - not impenetrable, and well worth understanding), and Friston’s notation can be opaque until you get used to it.
+- the maths itself is fairly daunting and Friston’s notation can be opaque until you get used to it. But, I'll show you in this article that it's not impenetrable and is well worth understanding!
 - the fields that Friston draws on to derive the FEP are diverse and any given person is unlikely to have studied them all[^4]. I happen to think this is what's most exciting about the FEP, because it provides an excuse to learn more about:
   - Statistical Mechanics, especially non-equilibrium stat-mech
   - Reinforcement Learning
   - Neuroscience and Predictive Coding
   - Dynamic systems and (stochastic) differential equations
   - Information theory
-  - Variational methods
+  - Variational inference methods
   - Path-integral formulations and the Principle of Least Action
   - Embodied cognition
   - Bayesian inference, action under uncertainty
   - Clinical psychiatry and computational corelates of pyschopathology
 
+For this post, don't worry about that list, as I'll introduce concepts as we need them!
+
 To begin, let’s look at some motivating ideas, which we’ll keep coming back to, with more and more formalism to back them up.
 
 ## You: a thing in the world
 
-You are a thing[^5] and you live in a world which you do not fully understand (or at-least, it should feel that way, if you're paying any attention).
+**You are a thing** (fully enlightened Buddhists with no sense-of-self don't @me yet please, it's just a starting point) and you live in a world which you do not fully understand (or at-least, it should feel that way, if you're paying any attention to how crazy things are right now).
 
 You get a constant stream of new information through your senses, and your brain somehow needs to use this information-deluge to do things like make exceptional scrambled eggs, renew your driver's licence, floss your teeth, and other crucial survival-skills.
+
+### Eye on the (causal) prize
 
 **Our first big insight into the FEP is that if you want to keep doing the survival thing, you should care not about the sense data itself, but about the stuff out there that causes it.** The sense data is just receptors firing more or less often. What matters is that you have receptors that reliably fire in a pattern that tells you useful things like:
 
@@ -52,6 +56,8 @@ So your sense-data isn't random - it has external causes - but it's not perfectl
 - is that a burglar standing in the corner of your dark room, or did someone leave a coat hanging on your hatstand?
 - is that the rustling of the wind in the leaves, or another, even scarier tiger stalking you?
 - is the pressure of your 'deep-tissue sports-massage' a welcome relief from stiffness, or categorical proof that your masseuse is a sadist?
+
+### Macro-pattern, micro-random
 
 In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. **This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern**. Friston often refers to this as possessing an 'attracting set' - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.
 
@@ -67,13 +73,15 @@ If you were suddenly to sense a temperature of 800 degrees, that would be surpri
 
 So your evolved biology ‘expects’ 37 degrees , and when it doesn’t get it it’s surprised. This '*surprisal*' is actually a formal term from information theory, where we quantify the amount of surprise as the negative natural logarithm of the probability of the observed outcome:
 
-$$\ln P(X = x)$$
+$$ - \ln P(X = x)$$
 
 All this is saying is that the lower the probability we expect for an event, the more surprised we should be if we do in-fact observe that event, and conversely, if we think there is a high probability of an event happening, we should not be very surprised to see it occur. If you enter the lottery, and I tell you you’ve won, you'd be really really surprised, because you know the probability of that is small. If I tell you you’ve lost, you're not really surprised at all, as that was always the likely outcome.
 
 ![graph of -lnP(x)](/img/free_energy1/media/image1.png)
 
 Let's drill a little deeper into this business of sensing something and - on the basis of that sensation - forming accurate beliefs about the temperature of the environment and your body. It’s worth saying: you don’t have a nice digital-thermometer organ attached somewhere to your body which your brain can just look at. You have millions of tiny sensory receptors, which fire because of the energetic bumping and jostling of atoms hitting the receptor. For a temperature receptor, when it’s hotter, the atoms hitting it have a higher average energy, which makes it more likely that the neuron the receptor is attached to is *depolarised* and fires an **action potential** ("spikes"). We can roughly reason that in hotter environments, our temperature receptors are firing more often (but only on average - it's still a "noisy" signal), and so maybe if our brain counted the number of spikes in a certain time, it could learn a mapping from the state of the sensory data it receives to the probable temperature of the environment.
+
+### All Reality is Virtual Reality
 
 **This gives us our third big clue about the FEP: we don’t directly experience the environment, only the noisy sensations that correlate with it.** This is really the jumping off point for the FEP: as an organism, we need to minimise our surprisal (we don’t want to find ourselves in 800 degree heat, and do want to find ourselves at 37 degrees, with high probability), but we only have access to our noisy sense data, and we don't know what causally determines our temperature in the environment.
 
@@ -241,7 +249,7 @@ $$ \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log \mathrm {P} (x_{i}})
 
 Entropy can be a somewhat tricky term, but I think this way of thinking about it is fairly intuitive: it’s just the amount you expect to be surprised by a given probability distribution. Some distributions are very tightly clustered around their average values, and so they are very unsurprising, hence low entropy. The opposite of this are the so-called maximum-entropy distributions, which means every sample is maximally surprising.
 
-Equipped with these ideas, we define a function $E(T,S)$:
+Equipped with these ideas, we define an **energy-like** function $E(T,S)$:
 
 $$\mathbf{Ε}(T,S)\  \equiv - \ln{P(T,S)}$$
 
@@ -255,10 +263,21 @@ $$F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \
 
 Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy[^10]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.
 
+## Conclusion and Summary
+
+We motivated the Free Energy Principle with three big ideas about living organisms:
+- Eye on the (causal) prize
+- Macro-pattern, micro-random
+- All Reality is Virtual Reality
+
 In the next post, we’ll take the background we developed here and build on it. We’ll take a deeper look at the R and G densities and some simplifying assumptions that allow us to write neat versions of them. The result will show the deep connection between the Free Energy Principle and Predictive Coding in the brain.
 
 If something here doesn't make sense, is clearly wrong, or got you interested, let me know here or on twitter [@jnearestn](https://twitter.com/jnearestn)
 If you don't want to wait for the next post, [The Free Energy Principle for Action and Perception: A Mathematical Review](https://arxiv.org/abs/1705.09156) is the best place to start out on your own, and I owe it a great deal in helping write this post!
+
+---
+
+Special thanks to [Gianluca](https://twitter.com/qvagabond) for his detailed comments on drafts of this post
 
 [^1]: The good news is that the Jeremy Howard rule is holds: even if all of the math seems difficult, it will look much simpler in code
 
@@ -281,4 +300,4 @@ If you don't want to wait for the next post, [The Free Energy Principle for Acti
 [^10]: as I'm writing this, I'm learning that this continuous analogy of the entropy is not actually well-defined. It's called differential entropy, and Claude Shannon apparently just wrote it down, assuming it was correct (okay, now I feel less bad for making the same assumption). It took E.T Jaynes to write down a better version called the 'Limiting Density of Discrete Points', which - at minimum - is a worse name than 'differential entropy'. I don't know what effect the ill-definedness of continuous entropy has for the FEP, so that's something to look into while I write part 2!
 
 
-Cover image: Andrestand on [Flickr](https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk)
+*Cover image: Andrestand:* [Flickr](https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk)
