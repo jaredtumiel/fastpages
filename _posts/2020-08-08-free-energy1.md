@@ -132,14 +132,12 @@ Which we can compress as a sum over each possible weather state:
 $$P(\text{Sunny}) = \sum_{weather}{P(\text{Sunny|weather})P(\text{weather})}$$
 " %}
 
-The probability of some sensation $\blue{P(S)}$ can be thought of as the total probability we get when we add up all the possible ways of getting a particular sensation $S$. We can get $S$ by adding up the probability of S given a particular temperature, and the probability of getting S given 
-
-If temperature were discrete, we would write the $P(S)$ term as the sum over all the temperatures that could generate that sensation, like this:
+Based on the box above, we want to write $P(S)$ like this: 
 
 $$\blue{P(S) = \sum_{i}{P(S|T_i)P(T_i)}}$$
 " %}
 
-Now if we assume that our environmental states are a continuous variable (temperature is just a real number) then we can make the denominator into an integral over the environmental states (possible temperatures):
+but we must remember that, unlike our discrete weather states above, temperature is a continuous variable (it's just a real number, which can take any value). Therefore, we replace the sum over states with an integral over all temperature values:
 
 $$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\blue{\int_{}^{}{P\left( S \middle| T \right)P\left( T \right)\text{dT}}}}$$
 
