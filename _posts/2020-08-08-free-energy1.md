@@ -190,25 +190,25 @@ $$\orange{P(T|S)}$$
 
 using some pretty basic probability theory identities:
 
-$$\orange{P( T | S )} = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
+$$\orange{P( T | S )} = \frac{\blue{P( S | T )P( T )}}{\purple{P( S )}}$$
 
 $$\blue{P( T,S ) = P( S | T )P( T )}$$
 
-$$\therefore \orange{P( T | S )} = \frac{\blue{P( T,S )}}{P\left( S \right)}$$
+$$\therefore \orange{P( T | S )} = \frac{\blue{P( T,S )}}{\purple{P( S )}}$$
 
 If we take the natural log of both sides:
 
-$$\ln{P \left( T \middle| S \right)} = \ln{\frac{P\left( T,S \right)}{P\left( S \right)} = \ln{P\left( T,S \right)} - \ln{P \left( S \right)}}$$
+$$\ln{\orange{P \left( T \middle| S \right)}} = \ln{\frac{\blue{P\left( T,S \right)}}{\purple{P\left( S \right)}} = \ln{\blue{P\left( T,S \right)}} - \ln{\purple{P \left( S \right)}}}$$
 
-Plugging this expression for $P(T | S)$ into our KL Divergence we get:
+Plugging this expression for $P(T \| S)$ into our KL Divergence we get:
 
-$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{q\left( T \right) - \ln{P\left( T,S \right) + \ln{P\left( S \right)}}}}\rbrack$$
+$$D_{\text{KL}}(q(T)||\orange{P(T|S)})\  = \int_{}^{}{dT\ q(T) \lbrack \ \ln{q\left( T \right) - \ln{\blue{P\left( T,S \right)} + \ln{\purple{P\left( S \right)}}}}}\rbrack$$
 
 Combining the first two $\ln$ terms:
 
-$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\  + \ \ln{P\left( S \right)}\ }}\rbrack$$
+$$D_{\text{KL}}(q(T)||\orange{P(T|S)})\  = \int_{}^{}{dT\ q(T) \lbrack \ln{\frac{q\left( T \right)}{\blue{P( T,S)}}\  + \ \ln{\purple{P\left( S \right)}}\ }}\rbrack$$
 
-Something you may notice about this is that we now have our KL divergence in terms of only our **R-density**, $q(T)$, and our **G-density**, $P(T,S)$, plus a **‘surprisal’ term** $\ln P(S)$ which - as we discussed above - just tells us how unexpected some sense data is. This looks like progress!
+Something you may notice about this is that we now have our KL divergence in terms of only our **R-density**, $q(T)$, and our **G-density**, $P(T,S)$, plus a **‘surprisal’ term** $\ln P(S)$. This looks like progress! Remember, our **R density** is just our current best guess about the true state of the environment, the **G-density** is our internal model of how sensory data and environmental states correlate, and **surprisal** tells us how unexpected some data was!
 
 We can pull the $\ln P(S)$ out from under the integral because we have the requirement that:
 
