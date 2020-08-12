@@ -61,7 +61,7 @@ So your sense-data isn't random - it has external causes - but it's not perfectl
 
 In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. **This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern - you can be micro-random but must be macro-stable!**. Friston often refers to this as possessing an 'attracting set' - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.
 
-There are lots of ways you could configure all of the atoms that currently constitute 'you'. Unfortunately, the vast majority are unworkable, probably because the most likely arrangement of those atoms is spread in a thin mist somewhere between here and Neptune. The small subset of all possible ways to configure yourself that keeps you ‘you’ is your phenotype, and homeostasis is basically the process of keeping yourself in those states through feedback and self-regulation. To survive long-term, you need to have a high probability of occupying those states that are compatible with life (and a low probability of becoming a thin mist somewhere between here and Neptune)
+There are lots of ways you could configure all of the atoms that currently constitute 'you'. Unfortunately, the vast majority are unworkable, probably because the most likely arrangement of those atoms is spread in a thin mist somewhere between here and Neptune. The small subset of all possible ways to configure yourself that keeps you ‘you’ is your **phenotype**, and homeostasis is basically the process of keeping yourself in those states through feedback and self-regulation. To survive long-term, you need to have a high probability of occupying those states that are compatible with life (and a low probability of becoming a thin mist somewhere between here and Neptune)
 
 Let’s make a concrete example out of temperature...
 
@@ -251,50 +251,79 @@ $$F\  \geq \  - \ln{P(S)}$$
 $$\int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack \geq - \ln P(S)$$
 
 So far, we have found that this quantity ‘free energy’ is an upper bound on surprisal, and we notice that minimising it means we are approximating the true posterior
+
 $$P(T|S)$$
 
 ## Another form of the free energy:
 
 We’re going to need to massage this equation for F a bit more to see if something useful pops out.
 
-Again, using the linearity of integration, and the properties of the logarithm, we have:
+Again, using the linearity of integration and the properties of the logarithm, we have:
 
 $$F\  \equiv \int_{}^{}\text{dT}\left\lbrack \\ q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack$$
 
 $$F\  = \ \int_{}^{}\text{dT}{\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}$$
 
-From statistical mechanics, we say that the expected value (or average) energy of a system is simply the sum over all energy states, times the probability of each energy state:
+From statistics, we say that the expected value (or average) of a Random Variable $X$ is the sum over all values that variable can take, times the probability it takes that value:
 
-$$E\lbrack X\rbrack\  = \ \sum_{i}^{}{X_{i}P(X_{i})}$$
+$$E\lbrack X\rbrack\  = \ \sum_{i}^{}{x_{i}P(X=x_{i})}$$
 
-And in the continuous case:
+{% include info.html text="
+If you need a sanity check, let's compute this for a fair 6-sided die.
+The probability for each face landing up is $1/6$
+The values our random variable $X$ can take are $X = \{1,2,3,4,5,6\}$
+$$E[X] = \sum_{x=1}^{6}\frac{1}{6}x = 3.5$$
+which is indeed the correct average value for our die 🎲
+" %}
+
+Replacing the sum with an integral in the continuous case:
 
 $$\displaystyle \operatorname {E} [X]=\int _{\mathbb {R} }xP(x)\,dx$$
 
-We also have the entropy of a system (precisely the average surprise in the probability distribution) as:
+We also have the entropy of a system (you should convince yourself that this is the "expected value" of the surprise $-\ln P(x)$):
 
 $$ \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log \mathrm {P} (x_{i}})$$
 
-
-![A close up of a device Description automatically generated]({{ site.baseurl }}/images/free_energy1/media/image4.png)
+![]({{ site.baseurl }}/images/free_energy1/media/image4.png)
 
 Entropy can be a somewhat tricky term, but I think this way of thinking about it is fairly intuitive: it’s just the amount you expect to be surprised by a given probability distribution. Some distributions are very tightly clustered around their average values, and so they are very unsurprising, hence low entropy. The opposite of this are the so-called maximum-entropy distributions, which means every sample is maximally surprising.
 
-Equipped with these ideas, we define an **energy-like** function $E(T,S)$:
+{% include info.html text="
+An example entropy calculation:
+A coin is a maximum entropy system, because it's maximally unpredictable, you don't know if it's going to come up heads $h$ or tails $t$
 
-$$\mathbf{Ε}(T,S)\  \equiv - \ln{P(T,S)}$$
+$$H(coin) = -P(h)\log P(h) - P(t)\log P(t)$$
 
-And this allows us to rewrite our free energy term F as:
+$$H(coin) = -0.5 * \log(0.5) - 0.5\log(0.5)$$
 
-$$F\  = \ \int_{}^{}{\text{dT}\ q(T)\ \ln{q(T)\ \ } -}\int_{}^{}{\text{dT}\ q(T)\ln{P(T,S)}}$$
+$$H(coin) \approx 0.3$$
 
-$$F = \int_{}^{}{\text{dT}\ q\left( T \right)\mathbf{E}\left( T,S \right)} + \int_{}^{}{\text{dT}\ q\left( T \right)\ln{q\left( T \right)}} $$
+Now imagine if we had an unfair coin that came up heads with a probability of 90%:
+
+$$H(coin) = -P(h)\log P(h) - P(t)\log P(t)$$
+
+$$H(coin) = -0.9\log (0.9) - 0.1\log (0.1)$$
+
+$$H(coin) \approx 0.14$$
+
+So the more certain we are about an outcome, the lower the entropy!
+" %}
+
+Equipped with these ideas, we define an **energy-like** function $\mathbf{E}(T,S)$:
+
+$$\red{\mathbf{Ε}(T,S)}\  \equiv  \red{- \ln{P(T,S)}}$$
+
+And this allows us to rewrite our free energy term F as (remember the $\mathbf{E}(T,S)$ is defined as the **negative** of the log above, so we get a positive in the end):
+
+$$F\  = \purple{\int_{}^{}{\text{dT}\ q(T)\ \ln{q(T)\ \ }}} -\int_{}^{}{\text{dT}\ q(T)\red{\ln{P(T,S)}}}$$
+
+$$F = \int_{}^{}{\text{dT}\ q\left( T \right)\red{\mathbf{E}\left( T,S \right)}} + \purple{\int_{}^{}{\text{dT}\ q\left( T \right)\ln{q\left( T \right)}}} $$
+
+Now, if we look at this formula (check that you see this from above) it looks like it’s saying that ‘free energy’ is equal to an average (expected value) of the energy-like function, minus something that looks a little like a continuous version of the entropy[^9]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics: $F = U-TS$. The Helmholtz free energy is defined as the difference between the internal energy $U$ and the entropy $S$ of the system, multiplied by the temperature $T$. Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work. Here I've split the $+$ into two negatives to emphasise we have an entropy **minus** the entropy.
 
 $$F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)$$
 
-Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy[^9]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.
-
-## Conclusion and Summary
+## Conclusion, Summary and Anki Cards
 
 We motivated the Free Energy Principle with three big ideas about living organisms:
 
@@ -313,8 +342,9 @@ Additionally, we learned:
 - The R-density is an internal best guess by the organism about the state of the environment: $q(T)$
 - Minimising the KL-Divergence lets us approximate the posterior
 - Free energy is an upper bound on surprisal
-  
-- 
+- We can rewrite our free energy as an average energy minus an entropy term, which makes it look like the Helmholtz free energy
+
+As an experiment in what [Michael Nielsen](http://augmentingcognition.com/ltm.html) and Andy Matuschak dub the [Mnemonic Medium](https://numinous.productions/ttft/), I've made a small deck of Anki cards that complement this post. If you use them, they'll make the tricky vocabulary we've developed here into something you have stored in your long-term memory for easy use. [You can download them here](https://jaredtumiel.github.io/blog/assets/free_energy_jared.apkg)
 
 In the next post, we’ll take the background we developed here and build on it. We’ll take a deeper look at the R and G densities and some simplifying assumptions that allow us to write neat versions of them. The result will show the deep connection between the Free Energy Principle and Predictive Coding in the brain.
 
