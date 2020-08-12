@@ -43,7 +43,7 @@ To begin, let’s look at some motivating ideas, which we’ll keep coming back 
 
 You get a constant stream of new information through your senses, and your brain somehow needs to use this information-deluge to do things like make exceptional scrambled eggs, renew your driver's licence, floss your teeth, and other crucial survival-skills.
 
-### Eye on the (causal) prize
+> Eye on the (causal) prize
 
 **Our first big insight into the FEP is that if you want to keep doing the survival thing, you should care not about the sense data itself, but about the stuff out there that causes it.** The sense data is just receptors firing more or less often. What matters is that you have receptors that reliably fire in a pattern that tells you useful things like:
 
@@ -57,7 +57,7 @@ So your sense-data isn't random - it has external causes - but it's not perfectl
 - is that the rustling of the wind in the leaves, or another, even scarier tiger stalking you?
 - is the pressure of your 'deep-tissue sports-massage' a welcome relief from stiffness, or categorical proof that your masseuse is a sadist?
 
-### Macro-pattern, micro-random
+> Macro-pattern, micro-random
 
 In the time you read all of the above, you breathed several times, each of your cells used some ATP, some cells died or were phagocytosed, the state of your brain changed and a bunch of different neurons fired, and yet You are still a thing in the world. From this I infer that you did not suddenly dissolve into an unremarkable puddle of goo in the preceding 30 seconds. **This is our second big insight into the FEP: as a system, many little things can change (you are dynamic), but you must keep yourself tightly bound into a larger pattern**. Friston often refers to this as possessing an 'attracting set' - a set of states that all of your bizarre chemical processes can wiggle around in and between, but not out of.
 
@@ -81,7 +81,7 @@ All this is saying is that the lower the probability we expect for an event, the
 
 Let's drill a little deeper into this business of sensing something and - on the basis of that sensation - forming accurate beliefs about the temperature of the environment and your body. It’s worth saying: you don’t have a nice digital-thermometer organ attached somewhere to your body which your brain can just look at. You have millions of tiny sensory receptors, which fire because of the energetic bumping and jostling of atoms hitting the receptor. For a temperature receptor, when it’s hotter, the atoms hitting it have a higher average energy, which makes it more likely that the neuron the receptor is attached to is *depolarised* and fires an **action potential** ("spikes"). We can roughly reason that in hotter environments, our temperature receptors are firing more often (but only on average - it's still a "noisy" signal), and so maybe if our brain counted the number of spikes in a certain time, it could learn a mapping from the state of the sensory data it receives to the probable temperature of the environment.
 
-### All Reality is Virtual Reality
+> All Reality is Virtual Reality
 
 **This gives us our third big clue about the FEP: we don’t directly experience the environment, only the noisy sensations that correlate with it.** This is really the jumping off point for the FEP: as an organism, we need to minimise our surprisal (we don’t want to find ourselves in 800 degree heat, and do want to find ourselves at 37 degrees, with high probability), but we only have access to our noisy sense data, and we don't know what causally determines our temperature in the environment.
 
@@ -89,7 +89,7 @@ Let's drill a little deeper into this business of sensing something and - on the
 
 As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for[^8]
 
-![Bayesian Inference!!](/img/free_energy1/media/image2.png)
+![Bayesian Inference!!](/imagesfree_energy1/media/image2_nyan.png)
 
 *(obligatory link to [Yudkowsky on Bayes Theorem](https://yudkowsky.net/rational/bayes). If this is new, read this now)*
 
