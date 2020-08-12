@@ -97,13 +97,17 @@ Bayes theorem tells us the optimal way to update our beliefs given some new evid
 
 ![Bayes Theorem](/img/free_energy1/media/bayes.png)
 
-What we want is to update our belief about the state of the environmental temperature, given our current sensory data:
+{% include info.html text="**A brief note on integral notation:**:
+I often write integrals like this: 
+$ \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$ 
+with the $dT$ at the front of the integral. If you're used to seeing it at the back, like this:
+$ \ \int_{}^{}{\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}dT}$
+don't freak out, they're exactly the same
+" %}
 
-$$Let\ P(Temp = 37) \equiv P(T)$$
+What we want is to update our belief about the state of the environmental temperature, given our current sensory data. Let's write the prior probability that our temperature is 37º as $P(T)$, and the probability that we receive 40 incoming neural impulses in a given time as $P(S)$. We want to know the updated probability that our temperature is 37º, given that we sense 40 neural spikes: 
 
-$$Let\ P(Sensation = 40\ spikes\ ) \equiv P(S)$$
-
-$$P(T=37|S=40)$$
+$$P(T|S)$$
 
 So our hypothesis is that the temperature is 37 degrees, and the evidence we're using to evaluate it is the 40 spikes we received in the last few seconds.
 
