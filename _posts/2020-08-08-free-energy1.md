@@ -210,35 +210,31 @@ $$D_{\text{KL}}(q(T)||\orange{P(T|S)})\  = \int_{}^{}{dT\ q(T) \lbrack \ln{\frac
 
 Something you may notice about this is that we now have our KL divergence in terms of only our **R-density**, $q(T)$, and our **G-density**, $P(T,S)$, plus a **‘surprisal’ term** $\ln P(S)$. This looks like progress! Remember, our **R density** is just our current best guess about the true state of the environment, the **G-density** is our internal model of how sensory data and environmental states correlate, and **surprisal** tells us how unexpected some data was!
 
-We can pull the $\ln P(S)$ out from under the integral because we have the requirement that:
+We can pull the $\ln P(S)$ out from under the integral because integration is linear we're integrating over $dT$ and so $\ln P(S)$ acts like a constant (it's just a number):
 
-$$\int_{}^{}{\text{dT} q \left( T \right) = 1}$$
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{\text{dT}\ q(T)\ \ln{\frac{q\left( T \right)}{\blue{P( T,S )}}\ }} + \ln{\purple{P(S)}}\int_{}^{}{dT\ q(T)}$$
 
-This is just the requirement that probabilities sum to one. Integration is linear, so we have:
+Furthermore, we have the requirement that
 
-$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{\text{dT}\ q(T)\ \ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ }} + \int_{}^{}{dT\ q(T)\ \ln{P(S)}}$$
+$$\green{\int_{}^{}{\text{dT}\ q \left( T \right) = 1}}$$
 
-$$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{} \text{dT}\left\lbrack q \left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack + \ln{P\left( S \right) \times 1}$$
+which just says that the total probability must add to 1. Using this, we get:
+
+$$D_{\text{KL}}(q(T)||P(T|S))\  = \pink{\int_{}^{} \text{dT}\left\lbrack q \left( T \right)\ln{\frac{q\left( T \right)}{\blue{P\left( T,S \right)}}\ } \right\rbrack} + \ln{\purple{P\left( S \right)} \times \green{1}}$$
 
 Now, we define:
 
-$$F\  \equiv \int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{P\left( T,S \right)}\ } \right\rbrack$$
+$$F\  \equiv \pink{\int_{}^{}\text{dT}\left\lbrack q\left( T \right)\ln{\frac{q\left( T \right)}{\blue{P\left( T,S \right)}}\ } \right\rbrack}$$
 
 Giving us:
 
 $$D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) = F + \ln{P(S})$$
 
-An important property of the KL Divergence is that it is always greater than or equal to zero. The formula above tells us that if our KL divergence went to zero (that is, if our R-density became a perfect approximation of our true posterior), we would have:
+If you haven’t guessed already, **the F we defined above *is* ‘free energy’!!**. Now we have a key result in the Free Energy literature, one which Friston refers to all the time:
 
-$$0 = F + \ln{P\left( S \right)}$$
+> Free energy is an upper bound on surprisal!
 
-$$F = - \ln{P(S)}$$
-
-If you haven’t guessed already, the F we defined above is ‘free energy’. Now we have a key result in the Free Energy literature, one which Friston refers to all the time:
-
-### Free energy is an upper bound on surprisal\!
-
-We can see this because we know that the KL divergence is always greater than or equal to zero, implying:
+You can see this if I tell you that the  KL divergence has the property that it is always greater than or equal to zero:
 
 $$D_{\text{KL}}(q(T)||P\left( T \middle| S \right)) \geq 0$$
 
