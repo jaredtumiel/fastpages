@@ -67,9 +67,9 @@ Let’s make a concrete example out of temperature...
 
 ## It’s getting hot in here (and that's surprising)
 
-Your body keeps itself near 37 degrees (Celsius), all the time[^6]
+Your body keeps itself near 37 degrees (Celsius), all the time[^5]
 
-If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is equipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body *itself* is an implicit expectation of a high probability of sensing that temperature[^7].
+If you were suddenly to sense a temperature of 800 degrees, that would be surprising. And bad. As an organism, 800 degrees is not compatible with your continued existence, and is not something your phenotype is equipped to deal with. In this sense, your body is implicitly making a claim that there is a low probability of you experiencing 800 degree heat, because if that were not the case, you would have a different body. Since 37 degrees seems cosy enough, your body *itself* is an implicit expectation of a high probability of sensing that temperature[^6].
 
 So your evolved biology ‘expects’ 37 degrees , and when it doesn’t get it it’s surprised. This '*surprisal*' is actually a formal term from information theory, where we quantify the amount of surprise as the negative natural logarithm of the probability of the observed outcome:
 
@@ -87,7 +87,7 @@ Let's drill a little deeper into this business of sensing something and - on the
 
 ## Getting Bayesian
 
-As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for[^8]
+As organisms, we want to update our beliefs about the true state of the environment, given some sense data as evidence. That’s right, it’s time for[^7]
 
 ![Bayesian Inference!!]({{ site.baseurl }}/images/free_energy1/media/image2_nyan.png)
 
@@ -156,17 +156,17 @@ The internal model that encodes how we expect our sense data to correlate with o
 
 You can imagine this as a big table that assigns a probability to each possible pair of values. A good model in this case would assign a high probability to the combination:
 
-$$P(high\ temp, lots\ of\ spikes)$$
+$$P(\text{high temp, lots of spikes})$$
 
 and a low probability to things like:
 
-$$P(high\ temp, few\ spikes)$$
+$$P(\text{high temp, few spikes})$$
 
-We will also want a function that represents our current ‘best-guess’ as to the causes of our sensory input, which we’ll call the R-density (for Recognition): $$q(T)$$
+We will also want a function that represents our current ‘best-guess’ as to the causes of our sensory input, which we’ll call the **R-density** (for Recognition): $$q(T)$$
 
 This is just a probability distribution over the state of the environment, and we’re using $q$ instead of $p$ to remind us that it’s a distribution we’re guessing at.
 
-We now need another fancy piece of information theory: the **Kullback-Liebler (KL) Divergence**[^9]
+We now need another fancy piece of information theory: the **Kullback-Liebler (KL) Divergence**[^8]
 
 **The KL Divergence just tells us how different two different probability distributions are:**
 
@@ -174,33 +174,33 @@ We now need another fancy piece of information theory: the **Kullback-Liebler (K
 
 We want the KL divergence because we want to know how close or far away our best guess is to the true posterior belief *if we could compute that ugly integral*
 
-We write the KL-divergence between our guess $q(T)$ about the environment and the optimal posterior belief about the environment from Baye's theorem.
+We write the KL-divergence between our guess $q(T)$ about the environment and the optimal posterior belief about the environment from Baye's theorem:
 
 $$D_{\text{KL}}(q(T)||P(T|S))\  = \ \int_{}^{}{\text{dT}\ q( T )\ln\frac{q\left( T \right)}{P\left( T \middle| S \right)}}$$
 
 which we rearrange using the property of the logarithm to:
 
-$$= \ \int_{}^{}{dT\ \lbrack q\left(T \right)\ln{q(T)\  - \ P(T|S)\rbrack}}$$
+$$= \ \int_{}^{}{dT\ q(T) \lbrack \ln{q(T)\  - \ P(T|S)\rbrack}}$$
 
 Now, any R-density (that is, any $q(T)$) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a $q(T)$ to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
 
 To get around this, we’ll rewrite the true posterior
 
-$$P(T|S)$$
+$$\orange{P(T|S)}$$
 
 using some pretty basic probability theory identities:
 
-$$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
+$$\orange{P( T | S )} = \frac{P\left( S \middle| T \right)P\left( T \right)}{P\left( S \right)}$$
 
-$$P\left( T,S \right) = P\left( S \middle| T \right)P\left( T \right)$$
+$$\blue{P( T,S ) = P( S | T )P( T )}$$
 
-$$\therefore P\left( T \middle| S \right) = \frac{P\left( T,S \right)}{P\left( S \right)}$$
+$$\therefore \orange{P( T | S )} = \frac{\blue{P( T,S )}}{P\left( S \right)}$$
 
 If we take the natural log of both sides:
 
 $$\ln{P \left( T \middle| S \right)} = \ln{\frac{P\left( T,S \right)}{P\left( S \right)} = \ln{P\left( T,S \right)} - \ln{P \left( S \right)}}$$
 
-Plugging this expression for $P(T\|S)$ into our KL Divergence we get:
+Plugging this expression for $P(T | S)$ into our KL Divergence we get:
 
 $$D_{\text{KL}}(q(T)||P(T|S))\  = \int_{}^{}{dT\ \lbrack q(T)\ \ln{q\left( T \right) - \ln{P\left( T,S \right) + \ln{P\left( S \right)}}}}\rbrack$$
 
@@ -292,14 +292,29 @@ $$F = \int_{}^{}{\text{dT}\ q\left( T \right)\mathbf{E}\left( T,S \right)} + \in
 
 $$F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)$$
 
-Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy[^10]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.
+Which (check that you see this from above) looks like it’s saying that ‘free energy’ is equal to an average energy, minus something that looks a little like a continuous version of the entropy[^9]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics. The Helmholtz free energy is defined as the difference between the internal energy and the entropy of the system (multiplied by the temperature, but ignore that here). Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work.
 
 ## Conclusion and Summary
 
 We motivated the Free Energy Principle with three big ideas about living organisms:
+
 - Eye on the (causal) prize
-- Macro-pattern, micro-random
+  - Survival depends on you figuring out what causes your sense data, because that allows you to model your environment
 - All Reality is Virtual Reality
+  - Survival depends on interpreting noisy correlates of the causes you care about. You can't see the causes directly
+- Macro-pattern, micro-random
+  - You are made of atoms doing lots of small, random things, which you must self-regulate to keep within a broader set of viable patterns
+
+Additionally, we learned:
+
+- We want to calculate the probability of our environment, given our sense data, but the integral is intractable
+- We use approximate Bayesian inference to get around this
+- The G-density is a probability density function that tells us how environmental states correlate with sensations: $P(T,S)$
+- The R-density is an internal best guess by the organism about the state of the environment: $q(T)$
+- Minimising the KL-Divergence lets us approximate the posterior
+- Free energy is an upper bound on surprisal
+  
+- 
 
 In the next post, we’ll take the background we developed here and build on it. We’ll take a deeper look at the R and G densities and some simplifying assumptions that allow us to write neat versions of them. The result will show the deep connection between the Free Energy Principle and Predictive Coding in the brain.
 
@@ -318,17 +333,15 @@ Special thanks to [Gianluca](https://twitter.com/qvagabond) for his detailed com
 
 [^4]: in fact, this multiplicity of disciplines seems to set off a percentage of people’s BS-detectors, sort of like when Deepak Chopra starts invoking Quantum Mechanics as an explanation for everything
 
-[^5]: Fully realised enlightened Buddhists with no sense-of-self don't @ me yet please, it's just a starting point
+[^5]: if you don't like 37, just use whatever number you were told by the last person who pointed one of those COVID-screening-thermometer-guns at your head
 
-[^6]: if you don't like 37, just use whatever number you were told by the last person who pointed one of those COVID-screening-thermometer-guns at your head
+[^6]: there is of course the question of ‘why expect 37 degrees in the first place, why not 800 and then you can survive through more possible states’, to which the quick answer is “evolution” and evolutionary niches" – something like: that temperature is the constraint that you, as a particular organism, are forced to satisfy because of the particular set of biochemical pathways you evolved to best fit into your environmental niche (which seems, at this point, to be Zoom Meetings, for some reason?)
 
-[^7]: there is of course the question of ‘why expect 37 degrees in the first place, why not 800 and then you can survive through more possible states’, to which the quick answer is “evolution” and evolutionary niches" – something like: that temperature is the constraint that you, as a particular organism, are forced to satisfy because of the particular set of biochemical pathways you evolved to best fit into your environmental niche (which seems, at this point, to be Zoom Meetings, for some reason?)
+[^7]: 9 year old Jared knew a killer font when he saw one
 
-[^8]: 9 year old Jared knew a killer font when he saw one
+[^8]: watch [this video by Aurelien Geron](https://www.youtube.com/watch?v=ErfnhcEV1O8) if you want a great intro to the KL-divergence
 
-[^9]: watch [this video by Aurelien Geron](https://www.youtube.com/watch?v=ErfnhcEV1O8) if you want a great intro to the KL-divergence
-
-[^10]: as I'm writing this, I'm learning that this continuous analogy of the entropy is not actually well-defined. It's called differential entropy, and Claude Shannon apparently just wrote it down, assuming it was correct (okay, now I feel less bad for making the same assumption). It took E.T Jaynes to write down a better version called the 'Limiting Density of Discrete Points', which - at minimum - is a worse name than 'differential entropy'. I don't know what effect the ill-definedness of continuous entropy has for the FEP, so that's something to look into while I write part 2!
+[^9]: as I'm writing this, I'm learning that this continuous analogy of the entropy is not actually well-defined. It's called differential entropy, and Claude Shannon apparently just wrote it down, assuming it was correct (okay, now I feel less bad for making the same assumption). It took E.T Jaynes to write down a better version called the 'Limiting Density of Discrete Points', which - at minimum - is a worse name than 'differential entropy'. I don't know what effect the ill-definedness of continuous entropy has for the FEP, so that's something to look into while I write part 2!
 
 
 *Cover image: Andrestand:* [Flickr](https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk)
