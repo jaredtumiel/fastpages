@@ -116,7 +116,7 @@ So our hypothesis is that the temperature is 37 degrees, and the evidence we're 
 
 $$P\left( T \middle| S \right) = \frac{P\left( S \middle| T \right)P\left( T \right)}{\blue{P(S)}}$$
 
-{% include info.html text=
+{% include info.html text="
 The $\blue{P(S)}$ term seems to cause trouble, so I'm going to spend a little extra time explaining it here, using the example of modelling the weather today based on yesterday's weather:
 
 The probability of it being sunny today, $P(\text{Sunny})$ can be thought of as the sum of the two possibilities - it could be sunny today, given that yesterday was sunny, or it could be sunny, given that yesterday was **not** sunny:
