@@ -2,7 +2,6 @@
 layout: post
 title: Friston's Free Energy Principle Explained
 subtitle: Part 1 - Introducing and Deriving Free Energy
-image: /img/free_energy1/media/path_int.jpg
 ---
 
 The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math[^1]. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork...
@@ -380,6 +379,3 @@ Special thanks to [Gianluca](https://twitter.com/qvagabond) for his detailed com
 [^8]: watch [this video by Aurelien Geron](https://www.youtube.com/watch?v=ErfnhcEV1O8) if you want a great intro to the KL-divergence
 
 [^9]: as I'm writing this, I'm learning that this continuous analogy of the entropy is not actually well-defined. It's called differential entropy, and Claude Shannon apparently just wrote it down, assuming it was correct (okay, now I feel less bad for making the same assumption). It took E.T Jaynes to write down a better version called the 'Limiting Density of Discrete Points', which - at minimum - is a worse name than 'differential entropy'. I don't know what effect the ill-definedness of continuous entropy has for the FEP, so that's something to look into while I write part 2!
-
-
-*Cover image: Andrestand:* [Flickr](https://www.flickr.com/photos/andrestand/6703933473/in/photolist-bdppRT-chFXkA-ZXYEXs-ZXYEnj-ZXYCk3-ZZV2jS-ZXYGCw-YY2eRL-YY2ahL-YY26ks-HpMxzn-213CToV-ZZVhPj-YY2hmW-ZZVazQ-G6ZRTH-213CU54-213CPWp-ZXYbGE-213CPqe-ZZVc3j-ZZUYEd-YY1MNU-2117VfH-213CRsv-CWzsmh-YY2i8A-ZXYcfJ-ZZUXvj-ZZUG9Y-CWzord-YY2hJE-ZZVfdN-YY2czS-YY29XN-YY26Ws-ZXnhRu-G4un7K-ZZV1Gu-YY1PxL-ZXkmRs-CWzuDy-ZZVdW9-ZXYtJ5-ZXYcQw-YVqA6W-CWzs1s-ykSEWf-YY2b7w-G6ZWXk)
