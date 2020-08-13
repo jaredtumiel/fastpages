@@ -180,7 +180,7 @@ $$D_{\text{KL}}(q(T)||P(T|S))\  = \ \int_{}^{}{\text{dT}\ q( T )\ln\frac{q\left(
 
 which we rearrange using the property of the logarithm to:
 
-$$= \ \int_{}^{}{dT\ q(T) \lbrack \ln{q(T)\  - \ P(T|S)\rbrack}}$$
+$$= \ \int_{}^{}{dT\ q(T) \lbrack \ln{q(T)\  - \ \ln P(T|S)\rbrack}}$$
 
 Now, any R-density (that is, any $q(T)$) which minimises this KL divergence, must be a good approximation of our true posterior. The only problem is that we don’t know the true posterior (that’s the thing we’re trying to work out in the first place), and so can’t simply guess a $q(T)$ to see if it minimises the KL Divergence, because we don't know what we're comparing it to.
 
@@ -319,11 +319,19 @@ $$F\  = \purple{\int_{}^{}{\text{dT}\ q(T)\ \ln{q(T)\ \ }}} -\int_{}^{}{\text{dT
 
 $$F = \int_{}^{}{\text{dT}\ q\left( T \right)\red{\mathbf{E}\left( T,S \right)}} + \purple{\int_{}^{}{\text{dT}\ q\left( T \right)\ln{q\left( T \right)}}} $$
 
-Now, if we look at this formula (check that you see this from above) it looks like it’s saying that ‘free energy’ is equal to an average (expected value) of the energy-like function, minus something that looks a little like a continuous version of the entropy[^9]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics: $F = U-TS$. The Helmholtz free energy is defined as the difference between the internal energy $U$ and the entropy $S$ of the system, multiplied by the temperature $T$. Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work. Here I've split the $+$ into two negatives to emphasise we have an entropy **minus** the entropy.
+Now, if we look at this formula (check that you see this from above) it looks like it’s saying that ‘free energy’ is equal to an average (expected value) of the energy-like function, minus something that looks a little like a continuous version of the entropy[^9]. This version of the formula is something you’ll hear Friston refer to often, because it's analagous to the  **Helmholtz free energy** from thermodynamics/statistical mechanics: $F = U-TS$. The Helmholtz free energy is defined as the difference between the internal energy $U$ and the entropy $S$ of the system, multiplied by the temperature $T$. Here the term ‘free energy’ acquires some physical sense, being the quantity of energy in our system that is available to do useful work. Here I've split the $+$ into two negatives to emphasise we have a potential energy **minus** the entropy.
 
 $$F = \int_{}^{}{\text{dT}\ q\left( T \right) \mathbf{E}\left( T,S \right) } - \left( - \int_{}^{}{\text{dT}\ q \left( T \right)\ln{q\left( T \right)} } \right)$$
 
-## Conclusion, Summary and Anki Cards
+
+
+Having gone through all of the above, we can now state the FEP explicitly:
+
+> The Free Energy Principle states that a system in nonequilibrium steady state with its environment must minimise its free energy
+
+We'll need another few posts to unpack everything there, but at minimum we now know what the 'free energy' term is and why minimising it might be useful!
+
+## Conclusion, Summary, and Anki Cards
 
 We motivated the Free Energy Principle with three big ideas about living organisms:
 
