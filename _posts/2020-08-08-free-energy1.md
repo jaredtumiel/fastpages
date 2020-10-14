@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Friston's Free Energy Principle Explained
+title: Friston's Free Energy Principle Explained (part 1)
 subtitle: Part 1 - Introducing and Deriving Free Energy
 ---
 
