@@ -1,9 +1,7 @@
 ---
 layout: post
-title: 3 Rules For Learning Difficult Things Online
-# subtitle: 
-# bigimg: /img/cover.jpg
-tags: [advice]   
+title: Unconventional Ways to Learn More Online
+description: 3 short ideas to get more out of your autodidacticism
 ---
 
 This doesn’t apply to people receiving a set online syllabus from a university or other institution. This is for people who, for whatever reason, didn’t have the chance to take the math/physics/bio/compsi[^1] courses they wanted to at a university, and are now trying to learn something useful on their own.

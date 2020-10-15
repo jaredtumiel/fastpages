@@ -11,17 +11,17 @@ A few months back I posted the first part of [an introduction to the Free Energy
 
 ![Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
 
-M
+For most things humans care to learn, someone has trod the path before and shown the way to others. There is a common starting point (usually the end of high school) an endpoint (doctor, physicist, architect, etc.), and a routine path to take between these two. The FEP has none of these. The researchers tend tocome from lots of different backgrounds, so everyone has things they know well, and things they need to learn. There isn't a clear end-point aside from "understand what's going on, maybe add to our understanding someday", and the complete path is not routine enough that there are any university degrees or courses entirely about the FEP.
 
-There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
+What we need is a syllabus! A list of material that gives you the necessary background to understand the full Free Energy Principle (and Active Inference), which also functions as a reasonably complete map of the territory so that people can quickly see what the field encompasses and how the parts relate. Our syllabus should cater to the kinds of people who end up interested in the FEP, so should include different starting points and different levels of technical detail. It should gradually improve you, filling in details as you become able to digest them. Lastly, it should challenge you to act and solve new problems - problems you couldn't have solved before you went through it.
 
-This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on [Twitter](https://twitter.com/jnearestn)!
+This is a first attempt to do some of those things. Each section has a short motivation, and some of the materials have descriptions where I thought it useful. At the end, there's a section on Open Problems and Future Research directions which I need your help filling out, so please comment on this post or reply to the Twitter thread!
 
 ## How to use this syllabus
 
-Generally, you should [Dive In](http://mindingourway.com/dive-in/). Don't wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system *before* you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with "prerequisites", treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites. 
+Generally, [*dive in*](http://mindingourway.com/dive-in/). Don't wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system *before* you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with "prerequisites", treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites. 
 
-I've also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more difficult technical material that only becomes relevant as your interests deepen. There isn't a strict order to the materials, which is why it's probably better to go iteratively deeper across categories as needed.
+I've also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more technical material that only becomes relevant as your interests deepen. There isn't a strict order to the materials, which is why it's probably better to go iteratively deeper across all the categories, instead of linearly down the list.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ The Free Energy Principle wants to explain how we, as biological organisms obeyi
 
 Entropy, Free Energy, non-equilibrium steady states - these ideas are front and centre in the FEP literature and all come from stat-mech. If you were going to spend your time learning about only one area of physics to really have a good basis in the FEP, this is probably the one you'd pick.
 
-- [Statistical Mechanics in The Theoretical Minimum](http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring) by Leonard Susskind [lecture course]
+- [Statistical Mechanics in The Theoretical Minimum](http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring) by Leonard Susskind [lecture videos]
   - Leonard Susskind is a hero to me. I've heard more than one person say that they did multiple stat-mech courses and the derivation of the partition function was never as magically clear as Susskind's. If you've never done any stat-mech, this is a good place to start!
 - [Statistical Mechanics: A Set of Lectures](https://www.amazon.com/Statistical-Mechanics-Lectures-Frontiers-Physics/dp/0201360764) by Richard Feynman [textbook]
   - The Feynman Lectures on Physics are rightly famous for their explanatory clarity, but less well-known are his lectures on statistical mechanics! Worth reading just because it's Feynman!
@@ -84,7 +84,7 @@ Of course, the FEP deals with living systems, and living means being far from th
 
 Friston sometimes frames the FEP in terms of a principle of least action, where action is an integral over a nice object called a Lagrangian. Lagrangians and Least Action principles give us a really powerful way to describe the equations of motion, symmetries, and conservation laws of our system, so knowing about this approach is really worthwhile. That being said, this approach doesn't feature prominently in the basic formulation of the FEP, so don't get stuck here!
 
-- [Classical Mechanics](https://theoreticalminimum.com/courses/classical-mechanics/2011/fall) by Leonard Susskind
+- [Classical Mechanics](https://theoreticalminimum.com/courses/classical-mechanics/2011/fall) by Leonard Susskind [lecture videos]
   - Like his Stat-Mech course, Susskind does a good job of getting the main ideas across with just enough maths to allow you to understand more formal treatments later.
 
 
@@ -92,7 +92,7 @@ Friston sometimes frames the FEP in terms of a principle of least action, where 
 
 Gauge theory is a way of describing how certain symmetries in our system can lead to new properties/forces. It's not a big part of the core theory, but I include it here because it's a personal favourite, and Friston and collaborators have dabbled in applying some gauge-theoretic ideas to the FEP.
 
-- [Gauge Theory - The Biggest Ideas in The Universe](https://www.youtube.com/watch?v=AuqKsBQnE2A&list=PLrxfgDEc2NxZJcWcrxH3jyjUUrJlnoyzX&index=30) by Sean Carroll
+- [Gauge Theory - The Biggest Ideas in The Universe](https://www.youtube.com/watch?v=AuqKsBQnE2A&list=PLrxfgDEc2NxZJcWcrxH3jyjUUrJlnoyzX&index=30) by Sean Carroll [video]
 - [Physics From Finance: A Gentle Introduction to Gauge Theories](https://www.amazon.com/Physics-Finance-introduction-fundamental-interactions/dp/1795882417) by Jakob Schwichtenberg [textbook]
   - This is about as an intuitive introduction to the idea as you could ever get. Schwichtenberg actually starts off with an easy financial model and then uses that analogy to build up to the use of gauge theories in particle physics. 
 
@@ -136,30 +136,31 @@ The FEP will remain an intriguing bit of mathematical theory if good programmers
 
 #### Deep Learning
 
-Deep learning has been so damn successful that it's worth knowing about just for that. Neural networks are great function-approximators, which can be useful in the FEP *Kaui article*. Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!
+Deep learning has been so damn successful that it's worth knowing about just for that. Neural networks are great function-approximators, which can be [useful in the FEP](https://kaiu.me/2017/07/11/introducing-the-deep-active-inference-agent/). Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!
 
 - [fast.ai](https://course.fast.ai/) by Jeremy Howard and Rachel Thomas [course]
   - An excellent, practical introduction to state of the art techniques in modern deep learning. Emphasis on deploying models. Worth it just for the Jeremy's wisdom.
-- [Advanced Deep Learning and Reinforcement Learning](https://www.youtube.com/watch?v=iOh7QUZGyiU&list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs) by DeepMind
-  - A more detailed course which picks up a lot of the detail that Fast.ai leaves out. It's by Deepmind so the content is good quality!
-- [Deep Learning Book](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
-  - Not so relevant to the FEP, but so so good and freely available that you might as well browse it! If you ever want to know more about deep learning, it also has a great set of introductory chapters on calculus, linear algebra, and probability theory, which just give enough to get started in the general area, rather than doing entire university courses!
+- [Advanced Deep Learning and Reinforcement Learning](https://www.youtube.com/watch?v=iOh7QUZGyiU&list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs) by DeepMind [lecture videos]
+  - A more detailed course which picks up a lot of the detail that Fast.ai leaves out.
+- [Deep Learning Book](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville [textbook]
+  - Not so relevant to the FEP, but so so good and freely available! If you ever want to know more about deep learning, it also has a great set of introductory chapters on calculus, linear algebra, and probability theory, which just give enough to get started in the general area, rather than doing entire university courses!
 
 #### Reinforcement Learning
 
-RL is the current established field for creating autonomous, intelligent agents that can interact with their environments. Knowing the basics of how RL has approached intelligence, what kinds of techniques are available, and their limitations, helps us put the FEP in context. RL also deals heavily with Markov chains, the Markov property, and has established techniques for programming these kinds of agents, all of which can be transferred into the design of FEP-style agents.
+RL is currently the most established field for creating autonomous, intelligent agents that can interact with their environments. Knowing the basics of how RL has approached intelligence, what kinds of techniques are available, and their limitations, helps us put the FEP in context. RL also deals heavily with Markov chains and the Markov property, and has established techniques for programming these kinds of agents. All of this can be transferred into the design of FEP-style agents.
 
-A nice side-effect is that RL has a bunch of established benchmarks and environments for testing how intelligent an agent is, and I think it's key to the future of the FEP/Active Inference that their techniques can be shown to compete with and eventually outperform the pure-RL models.
+A nice side-effect is that RL has a bunch of established benchmarks and environments for testing how intelligent an agent is (like [OpenAI Gym](https://discovery.ucl.ac.uk/id/eprint/10056745/1/Friston_Active%20Inference%20on%20OpenAI%20Gym.pdf)) and I think it's key to the future of the FEP/Active Inference that their techniques can be shown to compete with (and eventually outperform) pure-RL models.
 
 - [Introduction to Reinforcement Learning](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ) by David Silver [lecture videos]
   - The classic intro course!
 - [CS285: Deep Reinforcement Learning](https://www.youtube.com/watch?v=SinprXg2hUA&list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A) by Sergey Levine [lecture videos]
-  - Where the DeepMind course with David Silver introduces the ideas of traditional RL, this course goes into the details of modern deep RL
+  - Where the DeepMind course with David Silver introduces the ideas of traditional RL, this course goes into the details of modern deep RL. [My brother](https://ttumiel.github.io) recommends it highly
 - [OpenAI Spinning Up in Deep RL](https://spinningup.openai.com/en/latest/)
+  - A syllabus for learning RL on your own, and the inspiration for this post!
 
 #### Variational inference
 
-At the start of your journey into the FEP, you'll keep hearing about 'surprisal', 'the ELBO' (evidence lower bound), 'variational Bayes', and 'model evidence'. For whatever reason, I took too long to just go and find out that all of these ideas are well established and well explained in the field of variational inference
+At the start of your journey into the FEP, you'll keep hearing about 'surprisal', 'the ELBO' (evidence lower bound), 'variational Bayes', and 'model evidence'. For whatever reason, I took too long to just go and find out that all of these ideas are well established and well explained in the field of variational inference. Variational inference involves trying to infer an (intractable) probability distribution by using the techiniques of mathematical optimisation to make a starting distribution closer to our (intractable) target distribution.
 
 - [Variational Inference and Deep Learning: An Intuitive Introduction](https://www.youtube.com/watch?v=h0UE8FzdE8U) by Alex Lamb [video]
 - [Variational Inference: Foundations and Innovations](https://www.youtube.com/watch?v=Dv86zdWjJKQ) by David Blei [video]
@@ -171,11 +172,11 @@ At the start of your journey into the FEP, you'll keep hearing about 'surprisal'
 
 #### Generative models
 
-Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise data points). More generally, generative modelling tries to explain the data we're observing as being generated by some smaller set of variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!
+Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise plausible data points). More generally, generative modelling tries to explain the data we're observing as being generated by some smaller set of (latent) variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!
 
 - [Modern Latent Variable Models](https://www.youtube.com/watch?v=7Pcvdo4EJeo) by DeepMind & UCL [video]
 - [Probabilistic Graphical Models](https://www.youtube.com/watch?v=oqvdH_8lmCA&list=PLoZgVqqHOumTqxIhcdcpOAJOOimrRCGZn) by Eric Xing (also see course website [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html) [video lectures]
-  - I enjoy this course for taking a different perspective on ML/DL. There's a lot of variety, but the course has videos on variational inference and generative models. There are also slides and course notes [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html)
+  - I enjoy this course for taking a different perspective on ML/DL. There's a lot of variety, and the course has videos on variational inference and generative models. There are also slides and course notes [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html)
   
 ## The Free Energy Principle and Active Inference
 
@@ -187,6 +188,8 @@ The main event!
 - [Karl Friston on Brains, Predictions, and Free Energy](https://www.youtube.com/watch?v=TcFLQvz5uEg) by Sean Carroll on The Mindscape Podcast [podcast]
   - Sean's interview with Karl Friston is my favourite of his 'popular' appearances. Sean Carroll really got some great detail and explanations from Friston
 - [Karl Friston: Neuroscience and the Free Energy Principle](https://www.youtube.com/watch?v=NwzuibY5kUs) by Lex Fridman [podcast]
+- [Of woodlice and menA Bayesian account of cognition, life and consciousness](https://www.aliusresearch.org/uploads/9/1/6/0/91600416/friston_-_of_woodlice_and_men.pdf) an interview with Karl Friston by Martin Fortier and Daniel A. Friedman [transcript]
+  - 
 
 ### Technical introductions
 
