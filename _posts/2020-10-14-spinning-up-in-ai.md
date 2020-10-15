@@ -11,7 +11,7 @@ A few months back I posted the first part of [an introduction to the Free Energy
 
 ![Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
 
-Most 
+M
 
 There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
 
