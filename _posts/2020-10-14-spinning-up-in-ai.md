@@ -2,7 +2,7 @@
 layout: post
 title: Spinning Up in Active Inference and the Free Energy Principle
 description: A Syllabus for the Curious
-toc: True
+# toc: True
 comments: true
 hide: True
 ---
@@ -10,6 +10,27 @@ hide: True
 A few months back I posted the first part of [an introduction to the Free Energy Priniple](https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html). I did this because it's fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably [Research Debt](https://distill.pub/2017/research-debt/) - a dearth of digestible translations of the current cutting edge research into accessible language. This is the problem I'm trying to solve with my Intro posts. Another problem is that there is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
 
 This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on [Twitter](https://twitter.com/jnearestn)!
+
+<script>
+    $( document ).ready(function() {
+      // Handler for .ready() called.
+    
+    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+    
+    /* this offset helps account for the space taken up by the floating toolbar. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href'))
+        , scroll_target = target.offset().top
+    
+      $(window).scrollTop(scroll_target - 10);
+      return false
+    })
+      
+    });
+</script>
+    
+<div id="toc"></div>
+
 
 ## How to use this syllabus
 
