@@ -2,35 +2,18 @@
 layout: post
 title: Spinning Up in Active Inference and the Free Energy Principle
 description: A Syllabus for the Curious
-# toc: True
+toc: True
 comments: true
 hide: True
 ---
 
-A few months back I posted the first part of [an introduction to the Free Energy Priniple](https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html). I did this because it's fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably [Research Debt](https://distill.pub/2017/research-debt/) - a dearth of digestible translations of the current cutting edge research into accessible language. This is the problem I'm trying to solve with my Intro posts. Another problem is that there is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
+A few months back I posted the first part of [an introduction to the Free Energy Principle](https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html). I did this because it's fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably [Research Debt](https://distill.pub/2017/research-debt/) - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My *FEP Explained* posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!
+
+[Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
+
+There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
 
 This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on [Twitter](https://twitter.com/jnearestn)!
-
-<script>
-    $( document ).ready(function() {
-      // Handler for .ready() called.
-    
-    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-    
-    /* this offset helps account for the space taken up by the floating toolbar. */
-    $('#toc').on('click', 'a', function() {
-      var target = $(this.getAttribute('href'))
-        , scroll_target = target.offset().top
-    
-      $(window).scrollTop(scroll_target - 10);
-      return false
-    })
-      
-    });
-</script>
-    
-<div id="toc"></div>
-
 
 ## How to use this syllabus
 
@@ -62,11 +45,11 @@ Predictive processing is closely associated with the FEP, and naturally "emerges
 
 Part of the appeal of the FEP is that it might lead to improved models of the brain and biological intelligence. Learning to set up experiments, design simulations, and implement models of neural systems in code is a big part of turning the theoretical results of the FEP into a powerful set of new tools and applications!
 
-- [Neuromatch Academy](http://www.neuromatchacademy.org/syllabus/) 
+- [Neuromatch Academy](http://www.neuromatchacademy.org/syllabus/) [summer school/course][virtual]
   - This is a fully-online Summer School with all the materials freely available. It includes all of the content you need to get started in computational neuroscience and includes deep learning and reinforcement learning content too! The content has been created and curated by a great team of researchers and their explicit goal is to train people from diverse backgrounds in computational neuroscience!
-- [The Imbizo](http://imbizo.africa/) [Summer School/Course]
+- [The Imbizo](http://imbizo.africa/) [summer school/course][in-person]
   - If/when international travel ever becomes possble again, I cannot more strongly recommend attending the annual Computational Neuroscience 'Imbizo' in Muizenburg, South Africa. It's basically a three week crash course in computational neuroscience with a bunch of awesome speakers and students. It's easily the most fun I had in 2020, and I learnt a tonne!
-- [Computational Psychiatry course](http://www.translationalneuromodeling.org/cpcourse/)
+- [Computational Psychiatry course](http://www.translationalneuromodeling.org/cpcourse/) [course]
   - One of the promises of the FEP is a new understanding of the computational basis of psychiatric disorders such as depression, schizophrenia, ADHD, bipolar-mood disorder and others. This course is an introduction to understanding these conditions computationally and mathematically. The course materials are all online, and Karl Friston himself has given some of the lectures in previous years!
 
 ### Physics
@@ -252,6 +235,8 @@ Rereading this list, I can see it's skewed by my own research interests, so let 
 - **Computational Psychiatry**
   - [What Is Mood: A Computational Perspective](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340107/) by James Clark, Stuart Watson, and Karl Friston (2018)
   - [Deeply Felt Affect](https://psyarxiv.com/62pfd/) by Casper Hesp, Ryan Smith, Thomas Parr, Micah Allen, Karl Friston, Maxwell Ramstead (2019)
+- **Ecological Psychology/Enactivism**
+  - hold
 - **Origins of Life/Self-Organisation**
   - [Answering Schrodinger's question: a free-energy formuation](https://www.sciencedirect.com/science/article/pii/S1571064517301409) by Maxwell Ramstead, Paul Badcock, Karl Friston (2018)
   - [The Markov Blankets of Life: Autonomy, Active Inference, and the Free Energy Principle](https://royalsocietypublishing.org/doi/10.1098/rsif.2017.0792) by Michael Kirchhoff, Thomas Parr, Ensor Palacios, Karl Friston and Julian Kiverstein (2018)
