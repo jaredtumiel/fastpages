@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Your Algorithmic Reflection
-subtitle: Google, Facebook, Twitter, and their advertisers want to shape your behaviour. This doesn't have to be bad.
-bigimg: /img/cover.jpg
-tags: [tech]   
+description: Google, Facebook, Twitter, and their advertisers want to shape your behaviour. This doesn't have to be bad.
+image: /img/cover.jpg
 ---
 Most people are aware that algorithms shape their online experience. Some people understand that the algorithms' underlying incentive is to maximise time spent on-site and number of ad-clicks. **Few people know how to use this to their benefit.**
 

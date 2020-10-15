@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Friston's Free Energy Principle Explained (part 1)
-subtitle: Part 1 - Introducing and Deriving Free Energy
+description: Part 1 - Introducing and Deriving Free Energy
+comments: true
 ---
 
 The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math[^1]. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork...
