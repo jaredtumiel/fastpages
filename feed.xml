@@ -1,26 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-15T08:21:07-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Priniple&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of the current cutting edge research into accessible language. This is the problem I’m trying to solve with my Intro posts. Another problem is that there is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the &lt;a href=&quot;https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances&quot;&gt;inferential distance&lt;/a&gt;, taking you from a complete beginner, and gradually increasing the detail and technicality.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-15T08:58:17-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Principle&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My &lt;em&gt;FEP Explained&lt;/em&gt; posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/blog/images/syllabus/lost.jpeg&quot;&gt;Alice Lost In The Forest&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the &lt;a href=&quot;https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances&quot;&gt;inferential distance&lt;/a&gt;, taking you from a complete beginner, and gradually increasing the detail and technicality.&lt;/p&gt;
 
 &lt;p&gt;This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on &lt;a href=&quot;https://twitter.com/jnearestn&quot;&gt;Twitter&lt;/a&gt;!&lt;/p&gt;
-
-&lt;script&gt;
-    $( document ).ready(function() {
-      // Handler for .ready() called.
-    
-    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-    
-    /* this offset helps account for the space taken up by the floating toolbar. */
-    $('#toc').on('click', 'a', function() {
-      var target = $(this.getAttribute('href'))
-        , scroll_target = target.offset().top
-    
-      $(window).scrollTop(scroll_target - 10);
-      return false
-    })
-      
-    });
-&lt;/script&gt;
-
-&lt;div id=&quot;toc&quot;&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;how-to-use-this-syllabus&quot;&gt;How to use this syllabus&lt;/h2&gt;
 
@@ -64,17 +48,17 @@
 &lt;p&gt;Part of the appeal of the FEP is that it might lead to improved models of the brain and biological intelligence. Learning to set up experiments, design simulations, and implement models of neural systems in code is a big part of turning the theoretical results of the FEP into a powerful set of new tools and applications!&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.neuromatchacademy.org/syllabus/&quot;&gt;Neuromatch Academy&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.neuromatchacademy.org/syllabus/&quot;&gt;Neuromatch Academy&lt;/a&gt; [summer school/course][virtual]
     &lt;ul&gt;
       &lt;li&gt;This is a fully-online Summer School with all the materials freely available. It includes all of the content you need to get started in computational neuroscience and includes deep learning and reinforcement learning content too! The content has been created and curated by a great team of researchers and their explicit goal is to train people from diverse backgrounds in computational neuroscience!&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://imbizo.africa/&quot;&gt;The Imbizo&lt;/a&gt; [Summer School/Course]
+  &lt;li&gt;&lt;a href=&quot;http://imbizo.africa/&quot;&gt;The Imbizo&lt;/a&gt; [summer school/course][in-person]
     &lt;ul&gt;
       &lt;li&gt;If/when international travel ever becomes possble again, I cannot more strongly recommend attending the annual Computational Neuroscience ‘Imbizo’ in Muizenburg, South Africa. It’s basically a three week crash course in computational neuroscience with a bunch of awesome speakers and students. It’s easily the most fun I had in 2020, and I learnt a tonne!&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.translationalneuromodeling.org/cpcourse/&quot;&gt;Computational Psychiatry course&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.translationalneuromodeling.org/cpcourse/&quot;&gt;Computational Psychiatry course&lt;/a&gt; [course]
     &lt;ul&gt;
       &lt;li&gt;One of the promises of the FEP is a new understanding of the computational basis of psychiatric disorders such as depression, schizophrenia, ADHD, bipolar-mood disorder and others. This course is an introduction to understanding these conditions computationally and mathematically. The course materials are all online, and Karl Friston himself has given some of the lectures in previous years!&lt;/li&gt;
     &lt;/ul&gt;
@@ -393,6 +377,11 @@ Rereading this list, I can see it’s skewed by my own research interests, so le
       &lt;li&gt;&lt;a href=&quot;https://psyarxiv.com/62pfd/&quot;&gt;Deeply Felt Affect&lt;/a&gt; by Casper Hesp, Ryan Smith, Thomas Parr, Micah Allen, Karl Friston, Maxwell Ramstead (2019)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ecological Psychology/Enactivism&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;hold&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Origins of Life/Self-Organisation&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1571064517301409&quot;&gt;Answering Schrodinger’s question: a free-energy formuation&lt;/a&gt; by Maxwell Ramstead, Paul Badcock, Karl Friston (2018)&lt;/li&gt;
@@ -410,7 +399,7 @@ Rereading this list, I can see it’s skewed by my own research interests, so le
 
 &lt;p&gt;I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It’s so interdisciplinary that it welcomes people from all kinds of backgrounds, and there’s important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support -seriously, just try tweet some of the people mentioned in this post!&lt;/p&gt;
 
-&lt;p&gt;Good luck with your studies!&lt;/p&gt;</content><author><name></name></author><summary type="html">A few months back I posted the first part of an introduction to the Free Energy Priniple. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably Research Debt - a dearth of digestible translations of the current cutting edge research into accessible language. This is the problem I’m trying to solve with my Intro posts. Another problem is that there is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the inferential distance, taking you from a complete beginner, and gradually increasing the detail and technicality.</summary></entry><entry><title type="html">Friston’s Free Energy Principle Explained (part 1)</title><link href="https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html" rel="alternate" type="text/html" title="Friston's Free Energy Principle Explained (part 1)" /><published>2020-08-08T00:00:00-05:00</published><updated>2020-08-08T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/08/08/free-energy1</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html">&lt;p&gt;The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork…&lt;/p&gt;
+&lt;p&gt;Good luck with your studies!&lt;/p&gt;</content><author><name></name></author><summary type="html">A few months back I posted the first part of an introduction to the Free Energy Principle. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably Research Debt - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My FEP Explained posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!</summary></entry><entry><title type="html">Friston’s Free Energy Principle Explained (part 1)</title><link href="https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html" rel="alternate" type="text/html" title="Friston's Free Energy Principle Explained (part 1)" /><published>2020-08-08T00:00:00-05:00</published><updated>2020-08-08T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/08/08/free-energy1</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html">&lt;p&gt;The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork…&lt;/p&gt;
 
 &lt;h2 id=&quot;by-the-end-of-this-post-you-will-understand&quot;&gt;By the end of this post you will understand:&lt;/h2&gt;
 
