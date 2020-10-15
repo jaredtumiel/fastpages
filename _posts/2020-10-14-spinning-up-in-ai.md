@@ -9,7 +9,9 @@ hide: True
 
 A few months back I posted the first part of [an introduction to the Free Energy Principle](https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html). I did this because it's fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably [Research Debt](https://distill.pub/2017/research-debt/) - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My *FEP Explained* posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!
 
-[Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
+![Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
+
+Most 
 
 There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the [inferential distance](https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances), taking you from a complete beginner, and gradually increasing the detail and technicality.
 
@@ -96,7 +98,7 @@ Gauge theory is a way of describing how certain symmetries in our system can lea
 
 ### Maths
 
-I kind of want to say that I'm taking it for granted that you know at least a bit of [multivariable calculus](https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/), some [linear algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/), and some [probability theory](https://ocw.mit.edu/resources/res-6-012-introduction-to-probability-spring-2018/) (the FEP people definitely assume this, and more), but also *I* didn't know any of those things when I started (not so long ago!) and felt really helpless when they were just assumed, so the above links go to the MIT OpenCourseware courses I used to get going!
+I kind of want to say that I'm taking it for granted that you know at least a bit of [multivariable calculus](https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/), some [linear algebra](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/), and some [probability theory](https://ocw.mit.edu/resources/res-6-012-introduction-to-probability-spring-2018/) (the FEP people definitely assume this, and more), but also *I* didn't know any of those things when I started (not so long ago!) and felt really helpless when they were just assumed, so the above links go to the MIT OpenCourseware courses I used to get going!
 
 #### Bayesian inference
 
@@ -244,10 +246,14 @@ Rereading this list, I can see it's skewed by my own research interests, so let 
 
 ## Open Problems
 
-What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions encouraged!
+What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions encouraged - comment here or add to [this ongoing twitter thread]()
 
 ## Conclusion
 
 I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It's so interdisciplinary that it welcomes people from all kinds of backgrounds, and there's important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support -seriously, just try tweet some of the people mentioned in this post!
 
-Good luck with your studies!
+Good luck with your studies, and even more so with anything you create with that knowledge - perception-and-action *are* two sides of the same coin, after all!
+
+---
+
+Thank you to [Gianluca](https://twitter.com/QVagabond) and [@InferenceActive](https://twitter.com/InferenceActive) for their helpful comments on drafts of this post!
