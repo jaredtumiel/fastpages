@@ -9,6 +9,8 @@ A few months back I posted the first part of [an introduction to the Free Energy
 
 This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on [Twitter](https://twitter.com/jnearestn)!
 
+{:toc}
+
 ## How to use this syllabus
 
 Generally, you should [Dive In](http://mindingourway.com/dive-in/). Don't wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system *before* you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with "prerequisites", treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites. 
