@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-15T09:23:18-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Principle&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My &lt;em&gt;FEP Explained&lt;/em&gt; posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-15T10:18:45-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Principle&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My &lt;em&gt;FEP Explained&lt;/em&gt; posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/images/syllabus/lost.jpeg&quot; alt=&quot;Alice Lost In The Forest&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;M&lt;/p&gt;
+&lt;p&gt;For most things humans care to learn, someone has trod the path before and shown the way to others. There is a common starting point (usually the end of high school) an endpoint (doctor, physicist, architect, etc.), and a routine path to take between these two. The FEP has none of these. The researchers tend tocome from lots of different backgrounds, so everyone has things they know well, and things they need to learn. There isn’t a clear end-point aside from “understand what’s going on, maybe add to our understanding someday”, and the complete path is not routine enough that there are any university degrees or courses entirely about the FEP.&lt;/p&gt;
 
-&lt;p&gt;There is no well-defined syllabus of material that you could aim to complete such that, at the end, you have the necessary theoretical background to grok the theory in its full glory, and can feel confident that you have a reasonably complete map of the territory. A syllabus should gradually shorten the &lt;a href=&quot;https://www.lesswrong.com/posts/HLqWn5LASfhhArZ7w/expecting-short-inferential-distances&quot;&gt;inferential distance&lt;/a&gt;, taking you from a complete beginner, and gradually increasing the detail and technicality.&lt;/p&gt;
+&lt;p&gt;What we need is a syllabus! A list of material that gives you the necessary background to understand the full Free Energy Principle (and Active Inference), which also functions as a reasonably complete map of the territory so that people can quickly see what the field encompasses and how the parts relate. Our syllabus should cater to the kinds of people who end up interested in the FEP, so should include different starting points and different levels of technical detail. It should gradually improve you, filling in details as you become able to digest them. Lastly, it should challenge you to act and solve new problems - problems you couldn’t have solved before you went through it.&lt;/p&gt;
 
-&lt;p&gt;This syllabus includes short descriptions of each entry, so that it also functions as a high-level overview of how the various parts of the theory fit together. The syllabus ends with a list of the biggest unsolved challenges and open problems in the FEP/Active Inference scene. If you have suggestions, let me know on &lt;a href=&quot;https://twitter.com/jnearestn&quot;&gt;Twitter&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;This is a first attempt to do some of those things. Each section has a short motivation, and some of the materials have descriptions where I thought it useful. At the end, there’s a section on Open Problems and Future Research directions which I need your help filling out, so please comment on this post or reply to the Twitter thread!&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-use-this-syllabus&quot;&gt;How to use this syllabus&lt;/h2&gt;
 
-&lt;p&gt;Generally, you should &lt;a href=&quot;http://mindingourway.com/dive-in/&quot;&gt;Dive In&lt;/a&gt;. Don’t wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system &lt;em&gt;before&lt;/em&gt; you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with “prerequisites”, treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites.&lt;/p&gt;
+&lt;p&gt;Generally, &lt;a href=&quot;http://mindingourway.com/dive-in/&quot;&gt;&lt;em&gt;dive in&lt;/em&gt;&lt;/a&gt;. Don’t wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system &lt;em&gt;before&lt;/em&gt; you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with “prerequisites”, treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites.&lt;/p&gt;
 
-&lt;p&gt;I’ve also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more difficult technical material that only becomes relevant as your interests deepen. There isn’t a strict order to the materials, which is why it’s probably better to go iteratively deeper across categories as needed.&lt;/p&gt;
+&lt;p&gt;I’ve also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more technical material that only becomes relevant as your interests deepen. There isn’t a strict order to the materials, which is why it’s probably better to go iteratively deeper across all the categories, instead of linearly down the list.&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
 
@@ -76,7 +76,7 @@
 &lt;p&gt;Entropy, Free Energy, non-equilibrium steady states - these ideas are front and centre in the FEP literature and all come from stat-mech. If you were going to spend your time learning about only one area of physics to really have a good basis in the FEP, this is probably the one you’d pick.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring&quot;&gt;Statistical Mechanics in The Theoretical Minimum&lt;/a&gt; by Leonard Susskind [lecture course]
+  &lt;li&gt;&lt;a href=&quot;http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring&quot;&gt;Statistical Mechanics in The Theoretical Minimum&lt;/a&gt; by Leonard Susskind [lecture videos]
     &lt;ul&gt;
       &lt;li&gt;Leonard Susskind is a hero to me. I’ve heard more than one person say that they did multiple stat-mech courses and the derivation of the partition function was never as magically clear as Susskind’s. If you’ve never done any stat-mech, this is a good place to start!&lt;/li&gt;
     &lt;/ul&gt;
@@ -116,7 +116,7 @@
 &lt;p&gt;Friston sometimes frames the FEP in terms of a principle of least action, where action is an integral over a nice object called a Lagrangian. Lagrangians and Least Action principles give us a really powerful way to describe the equations of motion, symmetries, and conservation laws of our system, so knowing about this approach is really worthwhile. That being said, this approach doesn’t feature prominently in the basic formulation of the FEP, so don’t get stuck here!&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://theoreticalminimum.com/courses/classical-mechanics/2011/fall&quot;&gt;Classical Mechanics&lt;/a&gt; by Leonard Susskind
+  &lt;li&gt;&lt;a href=&quot;https://theoreticalminimum.com/courses/classical-mechanics/2011/fall&quot;&gt;Classical Mechanics&lt;/a&gt; by Leonard Susskind [lecture videos]
     &lt;ul&gt;
       &lt;li&gt;Like his Stat-Mech course, Susskind does a good job of getting the main ideas across with just enough maths to allow you to understand more formal treatments later.&lt;/li&gt;
     &lt;/ul&gt;
@@ -128,7 +128,7 @@
 &lt;p&gt;Gauge theory is a way of describing how certain symmetries in our system can lead to new properties/forces. It’s not a big part of the core theory, but I include it here because it’s a personal favourite, and Friston and collaborators have dabbled in applying some gauge-theoretic ideas to the FEP.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=AuqKsBQnE2A&amp;amp;list=PLrxfgDEc2NxZJcWcrxH3jyjUUrJlnoyzX&amp;amp;index=30&quot;&gt;Gauge Theory - The Biggest Ideas in The Universe&lt;/a&gt; by Sean Carroll&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=AuqKsBQnE2A&amp;amp;list=PLrxfgDEc2NxZJcWcrxH3jyjUUrJlnoyzX&amp;amp;index=30&quot;&gt;Gauge Theory - The Biggest Ideas in The Universe&lt;/a&gt; by Sean Carroll [video]&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Physics-Finance-introduction-fundamental-interactions/dp/1795882417&quot;&gt;Physics From Finance: A Gentle Introduction to Gauge Theories&lt;/a&gt; by Jakob Schwichtenberg [textbook]
     &lt;ul&gt;
       &lt;li&gt;This is about as an intuitive introduction to the idea as you could ever get. Schwichtenberg actually starts off with an easy financial model and then uses that analogy to build up to the use of gauge theories in particle physics.&lt;/li&gt;
@@ -202,7 +202,7 @@
 
 &lt;h4 id=&quot;deep-learning&quot;&gt;Deep Learning&lt;/h4&gt;
 
-&lt;p&gt;Deep learning has been so damn successful that it’s worth knowing about just for that. Neural networks are great function-approximators, which can be useful in the FEP &lt;em&gt;Kaui article&lt;/em&gt;. Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!&lt;/p&gt;
+&lt;p&gt;Deep learning has been so damn successful that it’s worth knowing about just for that. Neural networks are great function-approximators, which can be &lt;a href=&quot;https://kaiu.me/2017/07/11/introducing-the-deep-active-inference-agent/&quot;&gt;useful in the FEP&lt;/a&gt;. Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://course.fast.ai/&quot;&gt;fast.ai&lt;/a&gt; by Jeremy Howard and Rachel Thomas [course]
@@ -210,23 +210,23 @@
       &lt;li&gt;An excellent, practical introduction to state of the art techniques in modern deep learning. Emphasis on deploying models. Worth it just for the Jeremy’s wisdom.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iOh7QUZGyiU&amp;amp;list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs&quot;&gt;Advanced Deep Learning and Reinforcement Learning&lt;/a&gt; by DeepMind
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iOh7QUZGyiU&amp;amp;list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs&quot;&gt;Advanced Deep Learning and Reinforcement Learning&lt;/a&gt; by DeepMind [lecture videos]
     &lt;ul&gt;
-      &lt;li&gt;A more detailed course which picks up a lot of the detail that Fast.ai leaves out. It’s by Deepmind so the content is good quality!&lt;/li&gt;
+      &lt;li&gt;A more detailed course which picks up a lot of the detail that Fast.ai leaves out.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.deeplearningbook.org/&quot;&gt;Deep Learning Book&lt;/a&gt; by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+  &lt;li&gt;&lt;a href=&quot;https://www.deeplearningbook.org/&quot;&gt;Deep Learning Book&lt;/a&gt; by Ian Goodfellow, Yoshua Bengio, and Aaron Courville [textbook]
     &lt;ul&gt;
-      &lt;li&gt;Not so relevant to the FEP, but so so good and freely available that you might as well browse it! If you ever want to know more about deep learning, it also has a great set of introductory chapters on calculus, linear algebra, and probability theory, which just give enough to get started in the general area, rather than doing entire university courses!&lt;/li&gt;
+      &lt;li&gt;Not so relevant to the FEP, but so so good and freely available! If you ever want to know more about deep learning, it also has a great set of introductory chapters on calculus, linear algebra, and probability theory, which just give enough to get started in the general area, rather than doing entire university courses!&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;reinforcement-learning&quot;&gt;Reinforcement Learning&lt;/h4&gt;
 
-&lt;p&gt;RL is the current established field for creating autonomous, intelligent agents that can interact with their environments. Knowing the basics of how RL has approached intelligence, what kinds of techniques are available, and their limitations, helps us put the FEP in context. RL also deals heavily with Markov chains, the Markov property, and has established techniques for programming these kinds of agents, all of which can be transferred into the design of FEP-style agents.&lt;/p&gt;
+&lt;p&gt;RL is currently the most established field for creating autonomous, intelligent agents that can interact with their environments. Knowing the basics of how RL has approached intelligence, what kinds of techniques are available, and their limitations, helps us put the FEP in context. RL also deals heavily with Markov chains and the Markov property, and has established techniques for programming these kinds of agents. All of this can be transferred into the design of FEP-style agents.&lt;/p&gt;
 
-&lt;p&gt;A nice side-effect is that RL has a bunch of established benchmarks and environments for testing how intelligent an agent is, and I think it’s key to the future of the FEP/Active Inference that their techniques can be shown to compete with and eventually outperform the pure-RL models.&lt;/p&gt;
+&lt;p&gt;A nice side-effect is that RL has a bunch of established benchmarks and environments for testing how intelligent an agent is (like &lt;a href=&quot;https://discovery.ucl.ac.uk/id/eprint/10056745/1/Friston_Active%20Inference%20on%20OpenAI%20Gym.pdf&quot;&gt;OpenAI Gym&lt;/a&gt;) and I think it’s key to the future of the FEP/Active Inference that their techniques can be shown to compete with (and eventually outperform) pure-RL models.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2pWv7GOvuf0&amp;amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&quot;&gt;Introduction to Reinforcement Learning&lt;/a&gt; by David Silver [lecture videos]
@@ -236,15 +236,19 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=SinprXg2hUA&amp;amp;list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A&quot;&gt;CS285: Deep Reinforcement Learning&lt;/a&gt; by Sergey Levine [lecture videos]
     &lt;ul&gt;
-      &lt;li&gt;Where the DeepMind course with David Silver introduces the ideas of traditional RL, this course goes into the details of modern deep RL&lt;/li&gt;
+      &lt;li&gt;Where the DeepMind course with David Silver introduces the ideas of traditional RL, this course goes into the details of modern deep RL. &lt;a href=&quot;https://ttumiel.github.io&quot;&gt;My brother&lt;/a&gt; recommends it highly&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://spinningup.openai.com/en/latest/&quot;&gt;OpenAI Spinning Up in Deep RL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spinningup.openai.com/en/latest/&quot;&gt;OpenAI Spinning Up in Deep RL&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;A syllabus for learning RL on your own, and the inspiration for this post!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;variational-inference&quot;&gt;Variational inference&lt;/h4&gt;
 
-&lt;p&gt;At the start of your journey into the FEP, you’ll keep hearing about ‘surprisal’, ‘the ELBO’ (evidence lower bound), ‘variational Bayes’, and ‘model evidence’. For whatever reason, I took too long to just go and find out that all of these ideas are well established and well explained in the field of variational inference&lt;/p&gt;
+&lt;p&gt;At the start of your journey into the FEP, you’ll keep hearing about ‘surprisal’, ‘the ELBO’ (evidence lower bound), ‘variational Bayes’, and ‘model evidence’. For whatever reason, I took too long to just go and find out that all of these ideas are well established and well explained in the field of variational inference. Variational inference involves trying to infer an (intractable) probability distribution by using the techiniques of mathematical optimisation to make a starting distribution closer to our (intractable) target distribution.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=h0UE8FzdE8U&quot;&gt;Variational Inference and Deep Learning: An Intuitive Introduction&lt;/a&gt; by Alex Lamb [video]&lt;/li&gt;
@@ -264,13 +268,13 @@
 
 &lt;h4 id=&quot;generative-models&quot;&gt;Generative models&lt;/h4&gt;
 
-&lt;p&gt;Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise data points). More generally, generative modelling tries to explain the data we’re observing as being generated by some smaller set of variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!&lt;/p&gt;
+&lt;p&gt;Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise plausible data points). More generally, generative modelling tries to explain the data we’re observing as being generated by some smaller set of (latent) variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=7Pcvdo4EJeo&quot;&gt;Modern Latent Variable Models&lt;/a&gt; by DeepMind &amp;amp; UCL [video]&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=oqvdH_8lmCA&amp;amp;list=PLoZgVqqHOumTqxIhcdcpOAJOOimrRCGZn&quot;&gt;Probabilistic Graphical Models&lt;/a&gt; by Eric Xing (also see course website &lt;a href=&quot;http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html&quot;&gt;here&lt;/a&gt; [video lectures]
     &lt;ul&gt;
-      &lt;li&gt;I enjoy this course for taking a different perspective on ML/DL. There’s a lot of variety, but the course has videos on variational inference and generative models. There are also slides and course notes &lt;a href=&quot;http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;I enjoy this course for taking a different perspective on ML/DL. There’s a lot of variety, and the course has videos on variational inference and generative models. There are also slides and course notes &lt;a href=&quot;http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -289,6 +293,11 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=NwzuibY5kUs&quot;&gt;Karl Friston: Neuroscience and the Free Energy Principle&lt;/a&gt; by Lex Fridman [podcast]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.aliusresearch.org/uploads/9/1/6/0/91600416/friston_-_of_woodlice_and_men.pdf&quot;&gt;Of woodlice and menA Bayesian account of cognition, life and consciousness&lt;/a&gt; an interview with Karl Friston by Martin Fortier and Daniel A. Friedman [transcript]
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;technical-introductions&quot;&gt;Technical introductions&lt;/h3&gt;
@@ -839,7 +848,7 @@ If you don’t want to wait for the next post, &lt;a href=&quot;https://arxiv.or
       &lt;p&gt;as I’m writing this, I’m learning that this continuous analogy of the entropy is not actually well-defined. It’s called differential entropy, and Claude Shannon apparently just wrote it down, assuming it was correct (okay, now I feel less bad for making the same assumption). It took E.T Jaynes to write down a better version called the ‘Limiting Density of Discrete Points’, which - at minimum - is a worse name than ‘differential entropy’. I don’t know what effect the ill-definedness of continuous entropy has for the FEP, so that’s something to look into while I write part 2! &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math1. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork… The good news is that the Jeremy Howard rule is holds: even if all of the math seems difficult, it will look much simpler in code &amp;#8617;</summary></entry><entry><title type="html">3 Rules For Learning Difficult Things Online</title><link href="https://jaredtumiel.github.io/blog/2020/05/12/three-rules.html" rel="alternate" type="text/html" title="3 Rules For Learning Difficult Things Online" /><published>2020-05-12T00:00:00-05:00</published><updated>2020-05-12T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/05/12/three-rules</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/05/12/three-rules.html">&lt;p&gt;This doesn’t apply to people receiving a set online syllabus from a university or other institution. This is for people who, for whatever reason, didn’t have the chance to take the math/physics/bio/compsi&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; courses they wanted to at a university, and are now trying to learn something useful on their own.&lt;/p&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">The goal of this series of posts is to provide a friendly but rigorous guide to some of the key ideas underlying Karl Friston’s Free Energy Principle (henceforth: FEP). I will provide as much background as possible, and sprinkle in the intuition-pumps I find most helpful. I want this to be a technical guide, so we won’t shy away from any math1. Your reward for making it to the end will be a deep understanding of the core pieces of the Free Energy principle, the ability to explain it to an interested friend in plain english, and the ability to implement a simulation of Active Inference under the Free Energy Principle in Python! But before we get to the Python, we need to lay the groundwork… The good news is that the Jeremy Howard rule is holds: even if all of the math seems difficult, it will look much simpler in code &amp;#8617;</summary></entry><entry><title type="html">Unconventional Ways to Learn More Online</title><link href="https://jaredtumiel.github.io/blog/2020/05/12/three-rules.html" rel="alternate" type="text/html" title="Unconventional Ways to Learn More Online" /><published>2020-05-12T00:00:00-05:00</published><updated>2020-05-12T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/05/12/three-rules</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/05/12/three-rules.html">&lt;p&gt;This doesn’t apply to people receiving a set online syllabus from a university or other institution. This is for people who, for whatever reason, didn’t have the chance to take the math/physics/bio/compsi&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; courses they wanted to at a university, and are now trying to learn something useful on their own.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-advanced-before-introductory&quot;&gt;1. Advanced before Introductory&lt;/h2&gt;
 
@@ -902,7 +911,7 @@ If you don’t want to wait for the next post, &lt;a href=&quot;https://arxiv.or
       &lt;p&gt;I dream of a world where everyone has a browser plugin which just changes words to their favourite version. All the maths vs mathematics vs math people, all the American ‘-ize’ vs sensible ‘-ise’ people could just get on with it. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="advice" /><summary type="html">This doesn’t apply to people receiving a set online syllabus from a university or other institution. This is for people who, for whatever reason, didn’t have the chance to take the math/physics/bio/compsi1 courses they wanted to at a university, and are now trying to learn something useful on their own. I mostly have experience doing this for STEM domains. These might work for courses in the arts/humanities and so on, but there’s probably something important I’m missing &amp;#8617;</summary></entry><entry><title type="html">Your Algorithmic Reflection</title><link href="https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms.html" rel="alternate" type="text/html" title="Your Algorithmic Reflection" /><published>2019-08-11T00:00:00-05:00</published><updated>2019-08-11T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms.html">&lt;p&gt;Most people are aware that algorithms shape their online experience. Some people understand that the algorithms’ underlying incentive is to maximise time spent on-site and number of ad-clicks. &lt;strong&gt;Few people know how to use this to their benefit.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">This doesn’t apply to people receiving a set online syllabus from a university or other institution. This is for people who, for whatever reason, didn’t have the chance to take the math/physics/bio/compsi1 courses they wanted to at a university, and are now trying to learn something useful on their own. I mostly have experience doing this for STEM domains. These might work for courses in the arts/humanities and so on, but there’s probably something important I’m missing &amp;#8617;</summary></entry><entry><title type="html">Your Algorithmic Reflection</title><link href="https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms.html" rel="alternate" type="text/html" title="Your Algorithmic Reflection" /><published>2019-08-11T00:00:00-05:00</published><updated>2019-08-11T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2019/08/11/use-algorithms.html">&lt;p&gt;Most people are aware that algorithms shape their online experience. Some people understand that the algorithms’ underlying incentive is to maximise time spent on-site and number of ad-clicks. &lt;strong&gt;Few people know how to use this to their benefit.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The 2016 US election saw the popularisation of the terms &lt;em&gt;“filter bubble”&lt;/em&gt; and &lt;em&gt;“fake news”&lt;/em&gt;. The first refers to algorithms selectively showing social media content that confirms your existing worldview and systematically excluding all but strawman versions of opposing viewpoints from your feed. The second is a consequence of this: the algorithms will propagate the most polarising, least-nuanced views because these naturally stir reaction and attract clicks. At some point, the view becomes so distorted it’s patently false and yet wildly popular within a filter bubble. I’d flesh this out more, but CGP Grey has a &lt;a href=&quot;https://www.youtube.com/watch?v=rE3j_RHkqJc&quot;&gt;wonderful short video&lt;/a&gt; explaining just this, so you should go watch that instead.&lt;/p&gt;
 
