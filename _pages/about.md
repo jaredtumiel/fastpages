@@ -8,6 +8,4 @@ Hey, I'm Jared! I ~~sometimes read Karl Friston papers~~ am an independent resea
 
 ## Where else to find me
 
-I have a podcast [Apple](https://apple.podtangent.com), [Spotify](https://spotify.podtangent.com) where I speak with my good friend [Gianluca](https://twitter.com/QVagabond) about AI, medicine, and neuroscience.
-
-My twitter is [@jnearestn](https://twitter.com/jnearestn)
+I have a podcast [[Apple](https://apple.podtangent.com), [Spotify](https://spotify.podtangent.com)] where I speak with my good friend [Gianluca](https://twitter.com/QVagabond) about AI, medicine, and neuroscience.
