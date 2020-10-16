@@ -363,7 +363,7 @@ If you don't want to wait for the next post, [The Free Energy Principle for Acti
 
 Special thanks to [Gianluca](https://twitter.com/qvagabond) for his detailed comments on drafts of this post
 
-[^1]: The good news is that the Jeremy Howard rule is holds: even if all of the math seems difficult, it will look much simpler in code
+[^1]: The good news is that the Jeremy Howard rule holds: even if all of the math seems difficult, it will look much simpler in code
 
 [^2]: shoutout to the New York Times for going full 2020 and trying to [ruin that too](https://slatestarcodex.com/2020/06/22/nyt-is-threatening-my-safety-by-revealing-my-real-name-so-i-am-deleting-the-blog/)
 
