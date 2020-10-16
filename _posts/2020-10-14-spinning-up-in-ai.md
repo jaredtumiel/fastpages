@@ -11,7 +11,7 @@ A few months back I posted the first part of [an introduction to the Free Energy
 
 ![Alice Lost In The Forest]({{ site.baseurl }}/images/syllabus/lost.jpeg)
 
-For most things humans care to learn, someone has trod the path before and shown the way to others. There is a common starting point (usually the end of high school) an endpoint (doctor, physicist, architect, etc.), and a routine path to take between these two. The FEP has none of these. The researchers tend tocome from lots of different backgrounds, so everyone has things they know well, and things they need to learn. There isn't a clear end-point aside from "understand what's going on, maybe add to our understanding someday", and the complete path is not routine enough that there are any university degrees or courses entirely about the FEP.
+For most things humans care to learn, someone has trod the path before and shown the way to others. There is a common starting point (usually the end of high school) an endpoint (doctor, physicist, architect, etc.), and a routine path to take between these two. The FEP has none of these. The researchers tend to come from lots of different backgrounds, so everyone has things they know well, and things they need to learn. There isn't a clear end-point aside from "understand what's going on, maybe add to our understanding someday", and the complete path is not routine enough that there are any university degrees or courses entirely about the FEP.
 
 What we need is a syllabus! A list of material that gives you the necessary background to understand the full Free Energy Principle (and Active Inference), which also functions as a reasonably complete map of the territory so that people can quickly see what the field encompasses and how the parts relate. Our syllabus should cater to the kinds of people who end up interested in the FEP, so should include different starting points and different levels of technical detail. It should gradually improve you, filling in details as you become able to digest them. Lastly, it should challenge you to act and solve new problems - problems you couldn't have solved before you went through it.
 
@@ -19,7 +19,7 @@ This is a first attempt to do some of those things. Each section has a short mot
 
 ## How to use this syllabus
 
-Generally, [*dive in*](http://mindingourway.com/dive-in/). Don't wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from Fast.ai has this great line about playing around with a system *before* you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with "prerequisites", treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites. 
+Generally, [*dive in*](http://mindingourway.com/dive-in/). Don't wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from [Fast.ai](https://course.fast.ai) has this great line about getting a feel for something by playing around with the full construct *before* you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with "prerequisites", treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites.
 
 I've also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more technical material that only becomes relevant as your interests deepen. There isn't a strict order to the materials, which is why it's probably better to go iteratively deeper across all the categories, instead of linearly down the list.
 
@@ -53,6 +53,15 @@ Part of the appeal of the FEP is that it might lead to improved models of the br
   - If/when international travel ever becomes possble again, I cannot more strongly recommend attending the annual Computational Neuroscience 'Imbizo' in Muizenburg, South Africa. It's basically a three week crash course in computational neuroscience with a bunch of awesome speakers and students. It's easily the most fun I had in 2020, and I learnt a tonne!
 - [Computational Psychiatry course](http://www.translationalneuromodeling.org/cpcourse/) [course]
   - One of the promises of the FEP is a new understanding of the computational basis of psychiatric disorders such as depression, schizophrenia, ADHD, bipolar-mood disorder and others. This course is an introduction to understanding these conditions computationally and mathematically. The course materials are all online, and Karl Friston himself has given some of the lectures in previous years!
+
+### Control Theory/Cybernetics
+
+A huge part of the FEP has to do with *acting* on the world! We need to keep our physiological parameters within tolerable limits, using feedback loops and the techniques of control theory. Understandnig the history and techniques of these fields helps us contextualise the problems the FEP and active inference set out to solve.
+
+- [Mind In Motion: How Action Shapes Thought](https://www.amazon.com/Mind-Motion-Action-Shapes-Thought/dp/046509306X) by Barbara Tversky [book]
+- [Classical Control Theory](https://www.youtube.com/watch?v=oBc_BHxw78s&list=PLUMWjy5jgHK1NC52DXXrriwihVrYZKqjk) by Brian Douglas [videos]
+  - A short but useful introduction to control theory from an engineering viewpoint
+- [Understanding PID Control](https://www.youtube.com/watch?v=wkfEZmsQqiA&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y) by MatLab [videos]
 
 ### Physics
 
@@ -111,7 +120,6 @@ The FEP fundamentally deals with agents trying to infer the state of their envir
 - [Machine Learning: A Probabilistic Perspective](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020) by Kevin Murphy [textbook]
   - This is pretty lengthy but for the first 3 chapters (reintroducing key ideas in machine learning, probability theory, and generative models) are a quick way to get up to speed with a lot of the jargon, if you've already done a bit of probability theory beforehand! Chapter 5 on Bayesian statistics and chapter 21 on variational inference (see below) are especially relevant to the FEP!
 
-
 #### Information theory
 
 Entropy, confusingly, moonlights as a term in information theory. Not only that, but since much of the FEP is about a system inferring the state of a hidden (latent) variable through its noisy sensory signals, the techniques of information theory (invented by Claude Shannon for almost exactly that kind of problem) are key. Information theory also teaches us about the Kullback-Liebler divergence, which is worth knowing just on its own!
@@ -165,8 +173,8 @@ At the start of your journey into the FEP, you'll keep hearing about 'surprisal'
 - [Variational Inference and Deep Learning: An Intuitive Introduction](https://www.youtube.com/watch?v=h0UE8FzdE8U) by Alex Lamb [video]
 - [Variational Inference: Foundations and Innovations](https://www.youtube.com/watch?v=Dv86zdWjJKQ) by David Blei [video]
 - [Machine Learning: Variational Inference](https://www.youtube.com/watch?v=2pEkWk-LHmU) by John Boyd-Graeber [video]
-- [Variational Algorithms for Approximate Bayesian Inference]((https://cse.buffalo.edu/faculty/mbeal/papers/beal03.pdf)) by Matthew Beal [Thesis]
-  - The PhD thesis Friston cites frequently - the source of many of the key equations used in the FEP
+- [Variational Algorithms for Approximate Bayesian Inference]((https://cse.buffalo.edu/faculty/mbeal/papers/beal03.pdf)) by Matthew Beal [thesis]
+  - The PhD thesis Friston cites frequently and the source of many of the key equations used in the FEP
 - [Derivation of the Variational Bayes Equations](https://arxiv.org/abs/1906.08804) by Alianna Maren [paper]
   - A friendlier explanation of Beal's thesis, specifically for the FEP!
 
@@ -175,7 +183,7 @@ At the start of your journey into the FEP, you'll keep hearing about 'surprisal'
 Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise plausible data points). More generally, generative modelling tries to explain the data we're observing as being generated by some smaller set of (latent) variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!
 
 - [Modern Latent Variable Models](https://www.youtube.com/watch?v=7Pcvdo4EJeo) by DeepMind & UCL [video]
-- [Probabilistic Graphical Models](https://www.youtube.com/watch?v=oqvdH_8lmCA&list=PLoZgVqqHOumTqxIhcdcpOAJOOimrRCGZn) by Eric Xing (also see course website [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html) [video lectures]
+- [Probabilistic Graphical Models](https://www.youtube.com/watch?v=oqvdH_8lmCA&list=PLoZgVqqHOumTqxIhcdcpOAJOOimrRCGZn) by Eric Xing (also see course website [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html) [course]
   - I enjoy this course for taking a different perspective on ML/DL. There's a lot of variety, and the course has videos on variational inference and generative models. There are also slides and course notes [here](http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html)
   
 ## The Free Energy Principle and Active Inference
@@ -188,12 +196,12 @@ The main event!
 - [Karl Friston on Brains, Predictions, and Free Energy](https://www.youtube.com/watch?v=TcFLQvz5uEg) by Sean Carroll on The Mindscape Podcast [podcast]
   - Sean's interview with Karl Friston is my favourite of his 'popular' appearances. Sean Carroll really got some great detail and explanations from Friston
 - [Karl Friston: Neuroscience and the Free Energy Principle](https://www.youtube.com/watch?v=NwzuibY5kUs) by Lex Fridman [podcast]
-- [Of woodlice and menA Bayesian account of cognition, life and consciousness](https://www.aliusresearch.org/uploads/9/1/6/0/91600416/friston_-_of_woodlice_and_men.pdf) an interview with Karl Friston by Martin Fortier and Daniel A. Friedman [transcript]
-  - 
+- [Of woodlice and men: A Bayesian account of cognition, life and consciousness](https://www.aliusresearch.org/uploads/9/1/6/0/91600416/friston_-_of_woodlice_and_men.pdf) an interview with Karl Friston by Martin Fortier and Daniel A. Friedman [transcript]
+  - This interview with Friston delves into the history, philosophy, paradoxes, and clinical tie-ins of the FEP. I found it really helpful because I find it easier to understand a field if I know how it came about - it helps you see why *those* particular bricks were laid in that place. It reads really easily, and it has some ideas I'd wondered about but never seen in the literature (like the relationship between the FEP and [David Marr's famous Three Levels of Analysis](https://apsc450computationalneuroscience.wordpress.com/marrs-three-levels-of-inquiry/))
 
 ### Technical introductions
 
-- [Active Inference Podcast](https://www.youtube.com/watch?v=C94WDXAe4EE&list=PLNm0u2n1Iwdoe-4Be7frRpvBQ0q7yhnBV) by [@InferenceActive](https://twitter.com/InferenceActive)
+- [Active Inference Podcast](https://www.youtube.com/watch?v=C94WDXAe4EE&list=PLNm0u2n1Iwdoe-4Be7frRpvBQ0q7yhnBV) by [@InferenceActive](https://twitter.com/InferenceActive) [podcast]
   - This is a weekly podcast/journal club on the FEP/Active Inference. They're detailed and the participants are active researchers in the field, so it's a great way to hear their thoughts on some of the field's key papers 
 - [Tutorial on Active Inference](https://medium.com/@solopchuk/tutorial-on-active-inference-30edcf50f5dc) by Oleg Solopchuk [blog]
 - [How To Read Karl Friston in The Original Greek](https://www.aliannajmaren.com/2017/07/27/how-to-read-karl-friston-in-the-original-greek/) by Alianna Maren [blog]
@@ -205,7 +213,7 @@ The main event!
 - [Active Inference and Artificial Curiosity](https://www.youtube.com/watch?v=Y1egnoCWgUg) by Karl Friston [video]
 - [Predictive Coding Workshop](https://www.youtube.com/watch?v=b1hEc6vay) by Karl Friston [video]
 - [A Tutorial on Active Inference](https://www.youtube.com/watch?v=WzFQzFZiwzk) by Maxwell Ramstead [video]
-  - This is a really well explained intro to both the FEP and active inference. Big bonus is that it includes a great explanation of Markov Blankets, which you'll definitely want to know about!
+  - This is a really well explained intro to both the FEP and active inference. The big bonus is that it includes a great explanation of Markov Blankets, which you'll definitely want to know about!
 - [International Workshop on Active Inference](https://iwaiworkshop.github.io/#programme) [videos]
   - ECML-PKDD 2020 hosted the first ever International Workshop on Active Inference! This a big deal for the field as a whole, both because active inference got an entire workshop devoted to it at a mainstream machine learning conference, and because created a great  space to find more people working in the field! The video tutorials are all available to watch, and come paired with the slideshows. There were too many good talks to list them all, so go check the programme page above! Some talks I particularly enjoyed were:
     - [Active Learning and Active Inference in Exploration](https://slideslive.com/38933135/active-learning-and-active-inference-in-exploration) by Philipp Schwartenbeck
@@ -237,25 +245,37 @@ Rereading this list, I can see it's skewed by my own research interests, so let 
   - [Markov Blankets, Information Geometry, and Stochastic Thermodynamics](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0159) by Thomas Parr, Lancelot Da Costa, and Karl Friston (2019)
   - [On the statistical mechanics of life: Schrödinger revisited](https://arxiv.org/abs/1908.08374) by Kate Jeffery, Robert Pollack, Carlo Rovelli (2019)
   - [Conservation Laws by Virtue of Scale Symmetries in Neural Systems](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007865) by Erik D. Fagerholm, W. M. C. Foulkes, Yasir Gallero-Salas, Fritjof Helmchen, Karl J. Friston, Rosalyn J. Moran, Robert Leech (2020)
+- **Active Inference and Control Theory**
+  - [Active Inference and Agency: Optimal Control without Cost Functions](https://www.fil.ion.ucl.ac.uk/~karl/Active%20inference%20and%20agency%20optimal%20control%20without%20cost%20functions.pdf) by Karl Friston, Spyridon Samothrakis, and Read Montague (2012)
+  - [Active inference: building a new bridge between control theory and embodied cognitive science](http://sro.sussex.ac.uk/id/eprint/84970/) PhD Thesis by Manuel Baltieri (2019)
 - **Computational Psychiatry**
   - [What Is Mood: A Computational Perspective](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340107/) by James Clark, Stuart Watson, and Karl Friston (2018)
   - [Deeply Felt Affect](https://psyarxiv.com/62pfd/) by Casper Hesp, Ryan Smith, Thomas Parr, Micah Allen, Karl Friston, Maxwell Ramstead (2019)
-- **Ecological Psychology/Enactivism**
-  - hold
+- **Molecular Biology**
+  - [Knowing One's Place: A Free Energy Approach to Pattern Regulation](https://royalsocietypublishing.org/doi/10.1098/rsif.2014.1383) by Karl Friston, Michael Levin, Biswa Sengupta, and Giovanni Pezzulo (2015)
+  - [Morphogenesis as Bayesian inference: A variational approach to pattern formation and control in complex biological systems ](https://pubmed.ncbi.nlm.nih.gov/31320316/) by Franz Kuchling, Karl Friston, Georgi Georgiev, and Michael Levin (2020)
+- **Enactivism and Embodied Cognition**
+  - [A Tale of Two Densities: Active Inference is Enactive Inference](https://journals.sagepub.com/doi/full/10.1177/1059712319862774) by Maxwell Ramstead, Michael Kirchoff, and Karl Friston (2019)
+    - This paper was discussed in the [Active Inference Live-stream](https://www.youtube.com/watch?v=jHWCQ1dpoK0)
+- **Ecological Psychology and Evolution**
+  - [The Active Inference Approach to Ecological Perception: General Information Dynamics for Natural and Artificial Embodied Cognition](https://www.frontiersin.org/articles/10.3389/frobt.2018.00021/full) by Adam Linson, Andy Clark, Subramanian Ramamoorthy, and Karl Friston (2018)
+  - [Variational Ecology and the Physics of Sentient Systems](https://www.sciencedirect.com/science/article/pii/S157106451930003X) by Maxwell Ramstead, Axel Constant, Paul Badcock, and Karl Friston (2019)
+  - [The Hierarchically Mechanistic Mind: An Evolutionary Systems Theory of the Human Brain, Cognition, and Behaviour](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6861365/) by Paul Badcock, Karl Friston, Maxwell Ramstead, Annemie Ploeger, and Jakob Hohwy
 - **Origins of Life/Self-Organisation**
+  - [Life As We Know It](https://royalsocietypublishing.org/doi/10.1098/rsif.2013.0475) by Karl Friston (2013)
   - [Answering Schrodinger's question: a free-energy formuation](https://www.sciencedirect.com/science/article/pii/S1571064517301409) by Maxwell Ramstead, Paul Badcock, Karl Friston (2018)
   - [The Markov Blankets of Life: Autonomy, Active Inference, and the Free Energy Principle](https://royalsocietypublishing.org/doi/10.1098/rsif.2017.0792) by Michael Kirchhoff, Thomas Parr, Ensor Palacios, Karl Friston and Julian Kiverstein (2018)
   - [On Markov Blankets and hierarchical self-organisation](https://www.sciencedirect.com/science/article/pii/S0022519319304588) by Ensor Palacios, Adeel Razi, Thomas Parr, Michael Kirchhoff, Karl Friston (2020)
 
 ## Open Problems
 
-What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions encouraged - comment here or add to [this ongoing twitter thread]()
+What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions are encouraged, so comment here or add to [this ongoing twitter thread]()
 
 ## Conclusion
 
-I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It's so interdisciplinary that it welcomes people from all kinds of backgrounds, and there's important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support -seriously, just try tweet some of the people mentioned in this post!
+I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It's so interdisciplinary that it welcomes people from all kinds of backgrounds, and there's important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support - seriously, just try to tweet some of the people mentioned in this post!
 
-Good luck with your studies, and even more so with anything you create with that knowledge - perception-and-action *are* two sides of the same coin, after all!
+Good luck with your studies, and even more so with what you create with that knowledge - perception-and-action *are* two sides of the same coin, after all!
 
 ---
 
