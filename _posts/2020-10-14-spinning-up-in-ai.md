@@ -2,9 +2,9 @@
 layout: post
 title: Spinning Up in Active Inference and the Free Energy Principle
 description: A Syllabus for the Curious
-toc: True
+toc: true
 comments: true
-hide: True
+hide: false
 ---
 
 A few months back I posted the first part of [an introduction to the Free Energy Principle](https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html). I did this because it's fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably [Research Debt](https://distill.pub/2017/research-debt/) - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My *FEP Explained* posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!
@@ -116,7 +116,7 @@ The FEP fundamentally deals with agents trying to infer the state of their envir
 - [An Intuitive Explanation of Bayes' Theorem](https://yudkowsky.net/rational/bayes/) by Eliezer Yudkowsky [blog]
   - I link to this article all over the place because it's just so good. It won't teach you to use Bayesian techniques in your machine learning model, but it will teach you why you'd want to!
 - [Probability Theory: The Logic of Science](https://www.amazon.com/Probability-Theory-Science-T-Jaynes/dp/0521592712) by E.T. Jaynes [textbook]
-  - Rederiving probabilitiy theory from scratch might be overkill, but this book sort of reads like the Feynman Lectures, but for probability theory. Be sure to grab the [unofficial errata](http://ksvanhorn.com/bayes/jaynes/index.html)
+  - Rederiving probability theory from scratch might be overkill, but this book sort of reads like the Feynman Lectures, but for probability theory. Be sure to grab the [unofficial errata](http://ksvanhorn.com/bayes/jaynes/index.html)
 - [Machine Learning: A Probabilistic Perspective](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020) by Kevin Murphy [textbook]
   - This is pretty lengthy but for the first 3 chapters (reintroducing key ideas in machine learning, probability theory, and generative models) are a quick way to get up to speed with a lot of the jargon, if you've already done a bit of probability theory beforehand! Chapter 5 on Bayesian statistics and chapter 21 on variational inference (see below) are especially relevant to the FEP!
 
@@ -147,7 +147,7 @@ The FEP will remain an intriguing bit of mathematical theory if good programmers
 Deep learning has been so damn successful that it's worth knowing about just for that. Neural networks are great function-approximators, which can be [useful in the FEP](https://kaiu.me/2017/07/11/introducing-the-deep-active-inference-agent/). Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!
 
 - [fast.ai](https://course.fast.ai/) by Jeremy Howard and Rachel Thomas [course]
-  - An excellent, practical introduction to state of the art techniques in modern deep learning. Emphasis on deploying models. Worth it just for the Jeremy's wisdom.
+  - An excellent, practical introduction to state of the art techniques in modern deep learning. Emphasis on deploying models. Worth it just for Jeremy Howard's wisdom.
 - [Advanced Deep Learning and Reinforcement Learning](https://www.youtube.com/watch?v=iOh7QUZGyiU&list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs) by DeepMind [lecture videos]
   - A more detailed course which picks up a lot of the detail that Fast.ai leaves out.
 - [Deep Learning Book](https://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville [textbook]
