@@ -15,7 +15,7 @@ For most things humans care to learn, someone has trod the path before and shown
 
 What we need is a syllabus! A list of material that gives you the necessary background to understand the full Free Energy Principle (and Active Inference), which also functions as a reasonably complete map of the territory so that people can quickly see what the field encompasses and how the parts relate. Our syllabus should cater to the kinds of people who end up interested in the FEP, so should include different starting points and different levels of technical detail. It should gradually improve you, filling in details as you become able to digest them. Lastly, it should challenge you to act and solve new problems - problems you couldn't have solved before you went through it.
 
-This is a first attempt to do some of those things. Each section has a short motivation, and some of the materials have descriptions where I thought it useful. At the end, there's a section on Open Problems and Future Research directions which I need your help filling out, so please comment on this post or reply to the Twitter thread!
+This is a first attempt to do some of those things. Each section has a short motivation, and some of the materials have descriptions where I thought it useful. At the end, there's a section on Open Problems and Future Research directions which I need your help filling out, so please comment on this post or reply to [the Twitter thread](https://twitter.com/jnearestn/status/1317214588459507715)!
 
 ## How to use this syllabus
 
@@ -269,7 +269,7 @@ Rereading this list, I can see it's skewed by my own research interests, so let 
 
 ## Open Problems
 
-What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions are encouraged, so comment here or add to [this ongoing twitter thread]()
+What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions are encouraged, so comment here or add to [this ongoing twitter thread](https://twitter.com/jnearestn/status/1317214588459507715)
 
 ## Conclusion
 
