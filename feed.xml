@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-16T16:25:48-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Principle&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My &lt;em&gt;FEP Explained&lt;/em&gt; posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jaredtumiel.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaredtumiel.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-10-17T13:02:39-05:00</updated><id>https://jaredtumiel.github.io/blog/feed.xml</id><title type="html">jared tumiel</title><subtitle>a warm Markov Blanket</subtitle><entry><title type="html">Spinning Up in Active Inference and the Free Energy Principle</title><link href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" rel="alternate" type="text/html" title="Spinning Up in Active Inference and the Free Energy Principle" /><published>2020-10-14T00:00:00-05:00</published><updated>2020-10-14T00:00:00-05:00</updated><id>https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai</id><content type="html" xml:base="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html">&lt;p&gt;A few months back I posted the first part of &lt;a href=&quot;https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html&quot;&gt;an introduction to the Free Energy Principle&lt;/a&gt;. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably &lt;a href=&quot;https://distill.pub/2017/research-debt/&quot;&gt;Research Debt&lt;/a&gt; - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My &lt;em&gt;FEP Explained&lt;/em&gt; posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/images/syllabus/lost.jpeg&quot; alt=&quot;Alice Lost In The Forest&quot; /&gt;&lt;/p&gt;
 
@@ -79,6 +79,11 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=wkfEZmsQqiA&amp;amp;list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y&quot;&gt;Understanding PID Control&lt;/a&gt; by MatLab [videos]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Pi7l8mMjYVE&amp;amp;list=PLMrJAkhIeNNR20Mz-VpzgfQs5zrYi085m&quot;&gt;Control Bootcamp&lt;/a&gt; by Steve Brunton
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;physics&quot;&gt;Physics&lt;/h3&gt;
@@ -122,6 +127,7 @@
       &lt;li&gt;Both this book and the one below contain detailed derivations of the techniques used for non-equilibrium stat mech. They’re both similar, but Attard’s book has more focus on entropy and the second law of thermodynamics, whereas Livi spends more time on critical phenomena.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1205.4176&quot;&gt;Stochastic Thermodynamics, Fluctuation Theorems, and Molecular Machines&lt;/a&gt; by Udo Seifert (2012)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Non-equilibrium-Thermodynamics-Statistical-Mechanics-Applications/dp/0199662762&quot;&gt;Non-equilibrium Thermodynamics and Statistical Mechanics: Foundations and Applications&lt;/a&gt; by Attard [textbook]&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -391,6 +397,7 @@ Rereading this list, I can see it’s skewed by my own research interests, so le
       &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1203.3271&quot;&gt;The Thermodynamics of Prediction&lt;/a&gt; by Susanne Still, David A. Sivak, Anthony J. Bell, Gavin E. Crooks (2012)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002400&quot;&gt;Towards A Neuronal Gauge Theory&lt;/a&gt; by Biswa Sengupta, Arturo Tozzi, Gerald K. Cooray, Pamela K. Douglas, Karl J. Friston (2016)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1705.06614&quot;&gt;Approximate Bayesian inference as a gauge theory&lt;/a&gt; by Biswa Sengupta, Karl Friston (2017)&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0022249615000759&quot;&gt;A Tutorial on The Free Energy Framework for Perception and Learning&lt;/a&gt; by Rafal Bogacz (2017)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0159&quot;&gt;Markov Blankets, Information Geometry, and Stochastic Thermodynamics&lt;/a&gt; by Thomas Parr, Lancelot Da Costa, and Karl Friston (2019)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1908.08374&quot;&gt;On the statistical mechanics of life: Schrödinger revisited&lt;/a&gt; by Kate Jeffery, Robert Pollack, Carlo Rovelli (2019)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007865&quot;&gt;Conservation Laws by Virtue of Scale Symmetries in Neural Systems&lt;/a&gt; by Erik D. Fagerholm, W. M. C. Foulkes, Yasir Gallero-Salas, Fritjof Helmchen, Karl J. Friston, Rosalyn J. Moran, Robert Leech (2020)&lt;/li&gt;
@@ -399,6 +406,7 @@ Rereading this list, I can see it’s skewed by my own research interests, so le
   &lt;li&gt;&lt;strong&gt;Active Inference and Control Theory&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.fil.ion.ucl.ac.uk/~karl/Active%20inference%20and%20agency%20optimal%20control%20without%20cost%20functions.pdf&quot;&gt;Active Inference and Agency: Optimal Control without Cost Functions&lt;/a&gt; by Karl Friston, Spyridon Samothrakis, and Read Montague (2012)&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.mitpressjournals.org/doi/full/10.1162/NECO_a_00912&quot;&gt;Active Inference: A Process Theory&lt;/a&gt; by Karl Friston, Thomas Fitzgerald, Francesco Rigol, Philipp Schwartenbeck, and Giovanni Pezzulo (2016)&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;http://sro.sussex.ac.uk/id/eprint/84970/&quot;&gt;Active inference: building a new bridge between control theory and embodied cognitive science&lt;/a&gt; PhD Thesis by Manuel Baltieri (2019)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -449,6 +457,13 @@ Rereading this list, I can see it’s skewed by my own research interests, so le
 &lt;p&gt;I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It’s so interdisciplinary that it welcomes people from all kinds of backgrounds, and there’s important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support - seriously, just try to tweet some of the people mentioned in this post!&lt;/p&gt;
 
 &lt;p&gt;Good luck with your studies, and even more so with what you create with that knowledge - perception-and-action &lt;em&gt;are&lt;/em&gt; two sides of the same coin, after all!&lt;/p&gt;
+
+&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
+
+&lt;p&gt;Thanks to these people for suggesting resources to add to the post!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/inferenceactive&quot;&gt;InferenceActive&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/berenmillidge&quot;&gt;Beren Millidge&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
