@@ -62,6 +62,8 @@ A huge part of the FEP has to do with *acting* on the world! We need to keep our
 - [Classical Control Theory](https://www.youtube.com/watch?v=oBc_BHxw78s&list=PLUMWjy5jgHK1NC52DXXrriwihVrYZKqjk) by Brian Douglas [videos]
   - A short but useful introduction to control theory from an engineering viewpoint
 - [Understanding PID Control](https://www.youtube.com/watch?v=wkfEZmsQqiA&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y) by MatLab [videos]
+- [Control Bootcamp](https://www.youtube.com/watch?v=Pi7l8mMjYVE&list=PLMrJAkhIeNNR20Mz-VpzgfQs5zrYi085m) by Steve Brunton
+  - 
 
 ### Physics
 
@@ -86,6 +88,7 @@ Of course, the FEP deals with living systems, and living means being far from th
   - This is a great direct introduction to using the Fokker-Planck equation in the FEP! It's especially useful if you've read a few papers and can't make sense of the notation - this is the clearest description I've found!
 - [Nonequilibrium Statistical Physics: A Modern Perspective](https://www.amazon.com/Nonequilibrium-Statistical-Physics-Modern-Perspective/dp/1107049547) by Livi & Politi [textbook]
   - Both this book and the one below contain detailed derivations of the techniques used for non-equilibrium stat mech. They're both similar, but Attard's book has more focus on entropy and the second law of thermodynamics, whereas Livi spends more time on critical phenomena. 
+- [Stochastic Thermodynamics, Fluctuation Theorems, and Molecular Machines](https://arxiv.org/abs/1205.4176) by Udo Seifert (2012)
 - [Non-equilibrium Thermodynamics and Statistical Mechanics: Foundations and Applications](https://www.amazon.com/Non-equilibrium-Thermodynamics-Statistical-Mechanics-Applications/dp/0199662762) by Attard [textbook]
 
 
@@ -242,11 +245,13 @@ Rereading this list, I can see it's skewed by my own research interests, so let 
   - [The Thermodynamics of Prediction](https://arxiv.org/abs/1203.3271) by Susanne Still, David A. Sivak, Anthony J. Bell, Gavin E. Crooks (2012)
   - [Towards A Neuronal Gauge Theory](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002400) by Biswa Sengupta, Arturo Tozzi, Gerald K. Cooray, Pamela K. Douglas, Karl J. Friston (2016)
   - [Approximate Bayesian inference as a gauge theory](https://arxiv.org/abs/1705.06614) by Biswa Sengupta, Karl Friston (2017)
+  - [A Tutorial on The Free Energy Framework for Perception and Learning](https://www.sciencedirect.com/science/article/pii/S0022249615000759) by Rafal Bogacz (2017)
   - [Markov Blankets, Information Geometry, and Stochastic Thermodynamics](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0159) by Thomas Parr, Lancelot Da Costa, and Karl Friston (2019)
   - [On the statistical mechanics of life: Schrödinger revisited](https://arxiv.org/abs/1908.08374) by Kate Jeffery, Robert Pollack, Carlo Rovelli (2019)
   - [Conservation Laws by Virtue of Scale Symmetries in Neural Systems](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007865) by Erik D. Fagerholm, W. M. C. Foulkes, Yasir Gallero-Salas, Fritjof Helmchen, Karl J. Friston, Rosalyn J. Moran, Robert Leech (2020)
 - **Active Inference and Control Theory**
   - [Active Inference and Agency: Optimal Control without Cost Functions](https://www.fil.ion.ucl.ac.uk/~karl/Active%20inference%20and%20agency%20optimal%20control%20without%20cost%20functions.pdf) by Karl Friston, Spyridon Samothrakis, and Read Montague (2012)
+  - [Active Inference: A Process Theory](https://www.mitpressjournals.org/doi/full/10.1162/NECO_a_00912) by Karl Friston, Thomas Fitzgerald, Francesco Rigol, Philipp Schwartenbeck, and Giovanni Pezzulo (2016)
   - [Active inference: building a new bridge between control theory and embodied cognitive science](http://sro.sussex.ac.uk/id/eprint/84970/) PhD Thesis by Manuel Baltieri (2019)
 - **Computational Psychiatry**
   - [What Is Mood: A Computational Perspective](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340107/) by James Clark, Stuart Watson, and Karl Friston (2018)
@@ -276,6 +281,13 @@ What are the current open problems in the FEP/Active Inference framework? What r
 I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It's so interdisciplinary that it welcomes people from all kinds of backgrounds, and there's important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support - seriously, just try to tweet some of the people mentioned in this post!
 
 Good luck with your studies, and even more so with what you create with that knowledge - perception-and-action *are* two sides of the same coin, after all!
+
+## Contributors
+
+Thanks to these people for suggesting resources to add to the post!
+
+[InferenceActive](https://twitter.com/inferenceactive)
+[Beren Millidge](https://twitter.com/berenmillidge)
 
 ---
 
